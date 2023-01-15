@@ -1,0 +1,27 @@
+{
+"languageserver": {
+  "clangd": {
+    "command": "clangd",
+    "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+  },
+
+"clangd.arguments": ["--background-index","-std=c11"]
+},
+"rust-analyzer.enable": true,
+"rust-analyzer.serverPath": "/home/kero/server_lang_rust/ra-multiplex/target/release/ra-multiplex"
+"rust-analyzer.rustfmt.rangeFormatting.enable": true,
+rust-analyzer.updates.prompt:true,
+rust-analyzer.cachePriming.numThreads:7,
+rust-analyzer.cargo.autoreload:true,
+rust-analyzer.completion.callable.snippets:"fill_arguments",
+rust-analyzer.completion.postfix.enable:true,
+rust-analyzer.highlightRelated.breakPoints.enable:true,
+rust-analyzer.highlightRelated.exitPoints.enable:true,
+rust-analyzer.highlightRelated.references.enable:true,
+rust-analyzer.highlightRelated.yieldPoints.enable:true,
+rust-analyzer.lens.enable:true,
+rust-analyzer.lens.references.trait.enable:true,
+rust-analyzer.lens.run.enable:true,
+
+}
