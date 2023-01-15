@@ -16,6 +16,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'https://github.com/cdelledonne/vim-cmake'
 Plug 'Yggdroot/indentLine'
+"Plug 'rust-lang/rust.vim'
 Plug 'pearofducks/ansible-vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'HenryNewcomer/vim-theme-papaya'
@@ -27,10 +28,13 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'petertriho/nvim-scrollbar'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'Pocco81/auto-save.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'kylechui/nvim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'kdheepak/tabline.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'folke/trouble.nvim'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
@@ -45,6 +49,7 @@ autocmd ColorScheme *
 :lua require("tokio-night-config")
 :lua require("nvim-tree-config")
 :lua require("indent-blankline-config")
+:lua require("auto-save").setup{}
 :lua require("nvim-surround")
 :lua require("toggleterm_config")
 " mapping to open a specific window.
@@ -56,8 +61,6 @@ nnoremap <C-]> :ToggleTerm direction=float start_in_insert=true close_on_exit=tr
 "colorscheme monokai
 " Vim Script
 "let g:tokyonight_style = 'night'
-"let g:tokyonight_italic_functions = true
-"let g:tokyonight_sidebars = [ 'quickfix', '__vista__', 'termina
 "' ]
 " Vim Script
 "colorscheme tokyonight
@@ -74,6 +77,7 @@ colorscheme tokyonight-moon
 set termguicolors
 "colorscheme embark
 syntax enable
+filetype plugin indent on
 "colorscheme papaya
 
 set clipboard=unnamedplus
@@ -84,7 +88,6 @@ let g:coc_global_extensions = [
       \'coc-highlight',
       \'coc-explorer',
       \'coc-git',
-      \'coc-spell-checker',
       \'coc-snippets',
       \'coc-json',
       \'coc-clangd',
@@ -93,6 +96,7 @@ let g:coc_global_extensions = [
       \'coc-yank',
       \'coc-lightbulb',
       \]
+"      \'coc-spell-checker',
 
 set mouse=a
 set title
@@ -302,7 +306,7 @@ nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 
 "hi Visual  guifg=#94FFB9 guibg=#FFFFFF gui=none
-hi Visual  guifg=#B95EF1 guibg=LightBlue gui=none
+hi Visual  guifg=#00ff99 guibg=LightBlue gui=none
 
 nnoremap <Space><Tab> cgn
 
@@ -322,4 +326,9 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
-
+highlight Cursor guifg=white guibg=#ffcc00
+highlight iCursor guifg=white guibg=#ff6600
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
