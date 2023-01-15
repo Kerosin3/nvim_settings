@@ -16,7 +16,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'https://github.com/cdelledonne/vim-cmake'
 Plug 'Yggdroot/indentLine'
-"Plug 'rust-lang/rust.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
+Plug 'rust-lang/rust.vim'
 Plug 'pearofducks/ansible-vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'HenryNewcomer/vim-theme-papaya'
@@ -27,6 +32,7 @@ Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'petertriho/nvim-scrollbar'
 Plug 'tpope/vim-fugitive'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'Pocco81/auto-save.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
@@ -49,6 +55,7 @@ autocmd ColorScheme *
 :lua require("tokio-night-config")
 :lua require("nvim-tree-config")
 :lua require("indent-blankline-config")
+:lua require("telescope-config")
 :lua require("auto-save").setup{}
 :lua require("nvim-surround")
 :lua require("toggleterm_config")
@@ -332,3 +339,4 @@ set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
+let g:rustfmt_autosave = 1
