@@ -28,6 +28,7 @@ Plug 'petertriho/nvim-scrollbar'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
+Plug 'kylechui/nvim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'kdheepak/tabline.nvim'
 Plug 'ggandor/lightspeed.nvim'
@@ -44,6 +45,7 @@ autocmd ColorScheme *
 :lua require("tokio-night-config")
 :lua require("nvim-tree-config")
 :lua require("indent-blankline-config")
+:lua require("nvim-surround")
 :lua require("toggleterm_config")
 " mapping to open a specific window.
 " For example: 2<C-t> will open terminal 2
