@@ -16,7 +16,7 @@
 "diagnostic.refreshOnInsertMode": true,
 "diagnostic.virtualTextLimitInOneLine": 2,
 "diagnostic.enableHighlightLineNumber": true,
-"diagnostic.level": "error",
+"diagnostic.level": "warning",
 "diagnostic.errorSign": "●",
 "diagnostic.warningSign": "⚠",
 "diagnostic.virtualTextAlign":"after",

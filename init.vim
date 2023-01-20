@@ -10,6 +10,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'rakr/vim-one'
 Plug 'sickill/vim-monokai'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'frazrepo/vim-rainbow'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
@@ -40,6 +41,7 @@ Plug 'kylechui/nvim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'kdheepak/tabline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ellisonleao/glow.nvim'
 "Plug 'folke/trouble.nvim'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
@@ -50,7 +52,9 @@ call plug#end()
 
 autocmd ColorScheme *
       \ hi CocUnusedHighlight ctermbg=NONE guibg=#94FFB9 guifg=#D433FF
-
+au FileType c,cpp,objc,objcpp,rs call rainbow#load()
+ let g:rainbow_guifgs = ['aquamarine', 'chocolate1', 'plum1', 'darkseagreen1']
+let g:rainbow_active = 1
 :lua require("scrollbar").setup()
 :lua require("tokio-night-config")
 :lua require("nvim-tree-config")
@@ -297,7 +301,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Commenting blocks of code.
 augroup commenting_blocks_of_code
   autocmd!
-  autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+  autocmd FileType c,cpp,java,scala,rust let b:comment_leader = '// '
   autocmd FileType sh,ruby,python   let b:comment_leader = '# '
   autocmd FileType conf,fstab       let b:comment_leader = '# '
   autocmd FileType tex              let b:comment_leader = '% '
