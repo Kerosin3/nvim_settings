@@ -35,7 +35,6 @@ Plug 'petertriho/nvim-scrollbar'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
-Plug 'Pocco81/auto-save.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'kylechui/nvim-surround'
 Plug 'itchyny/lightline.vim'
@@ -60,13 +59,18 @@ let g:rainbow_active = 1
 :lua require("nvim-tree-config")
 :lua require("indent-blankline-config")
 :lua require("telescope-config")
-:lua require("auto-save").setup{}
 :lua require("nvim-surround")
 :lua require("toggleterm_config")
 " mapping to open a specific window.
 " For example: 2<C-t> will open terminal 2
 nnoremap <C-\> :ToggleTerm direction=horizontal size=17 start_in_insert=true close_on_exit=true<CR>
 nnoremap <C-]> :ToggleTerm direction=float start_in_insert=true close_on_exit=true<CR>
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 "press \\ to exit
 
 "colorscheme monokai
@@ -344,3 +348,5 @@ set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 let g:rustfmt_autosave = 1
+hi CocInlayHint guibg=NONE guifg=#40e0d0 
+"hi default CocRustChainingHint guibg=Red guifg=Blue ctermbg=0 ctermfg=8
