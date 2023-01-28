@@ -1,3 +1,4 @@
+#!/bin/zsh
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -10,10 +11,10 @@
 
 # Path to your oh-my-zsh installation.
 #export ZSH="/home/ker0/.oh-my-zsh"
-#export QT_QPA_PLATFORM="xcb"
-#export QT_QPA_PLATFORMTHEME=qt5ct
-#export QT_XFT=true
-#export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+export QT_QPA_PLATFORM="xcb"
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_XFT=true
+export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -103,6 +104,7 @@ if [ ! -d "$ZINIT_H" ]; then
 	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 	source "${ZINIT_HOME}/zinit.zsh"
 fi
+
 #source $OH_MY_ZSH_CUSTOM/zsh-autosuggestions/zsh-autosuggestions.zsh
 # User configuration
 
@@ -110,12 +112,6 @@ fi
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-autoload -U compinit && compinit
-setopt SHARE_HISTORY
-HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
-setopt HIST_EXPIRE_DUPS_FIRST
 
 if [ -f ~/.bash_profile ]; 
     then . ~/.bash_profile;
@@ -152,6 +148,8 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
 autoload -U colors && colors
 alias ls='ls --color=auto'
 #export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:*.tar=1;31:*.gz=1;31:*.tbz2=1;31"
@@ -207,23 +205,57 @@ zinit light-mode for \
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
+zinit load zdharma-continuum/history-search-multi-word
 zinit ice blockf
 zinit ice depth"1" # git clone depth
 zinit light zsh-users/zsh-completions 
+zinit ice depth=1
+#zinit light jeffreytse/zsh-vi-mode
+# extract archive .zip
+zinit light alexrochas/zsh-extract
+zinit light wfxr/forgit
+#misc for themes
+setopt promptsubst
+zinit wait lucid for \
+        OMZL::git.zsh \
+  atload"unalias grv" \
+        OMZP::git
+if [ "$EUID" -ne 0 ]
+  then 
+	zinit wait'!' lucid for \
+	OMZL::prompt_info_functions.zsh \
+	OMZT::gnzh
+  else
+	zinit wait'!' lucid for \
+	OMZL::prompt_info_functions.zsh \
+	OMZT::jonathan
+  exit
+fi
+# prompt
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+#zinit light sindresorhus/pure
+# ls colors
+#
+zinit light trapd00r/LS_COLORS
+zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
+    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
 
-# Load starship theme
-zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
-zinit light sindresorhus/pure
-zstyle ':prompt:pure:prompt:*' color '#99ff99'
-zstyle :prompt:pure:path color '#ffff00'
-zstyle :prompt:pure:prompt:error color '#ff0000'
-zstyle :prompt:pure:prompt:success color '#00cc66'
-zstyle :prompt:pure:host color '#ff66ff'
-zstyle :prompt:pure:user color '#ccff33'
-zstyle :prompt:pure:user:root color '#ff0000'
-zstyle :prompt:pure:git:branch color '#99ccff'
-PURE_PROMPT_SYMBOL=❯❯❯   
-#zinit light romkatv/powerlevel10k
+#zinit light jonmosco/kube-ps1
+#PROMPT='$(kube_ps1)'$PROMPT
+#zinit light 
+#zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
+#zinit light sindresorhus/pure
+#zstyle ':prompt:pure:prompt:*' color '#99ff99'
+#zstyle :prompt:pure:path color '#ffff00'
+#zstyle :prompt:pure:prompt:error color '#ff0000'
+#zstyle :prompt:pure:prompt:success color '#00cc66'
+#zstyle :prompt:pure:host color '#ff66ff'
+#zstyle :prompt:pure:user color '#ccff33'
+#zstyle :prompt:pure:user:root color '#ff0000'
+#zstyle :prompt:pure:git:branch color '#99ccff'
+#PURE_PROMPT_SYMBOL=❯❯❯   
+#
 # Download the default profile
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=159'
@@ -231,3 +263,15 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=159'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#
+###################################################################################
+# load libaries
+###################################################################################
+for config_file (${HOME}/.config/zsh/*.zsh); do
+    source ${config_file}
+done
+# local settings to override
+###################################################################################
+[[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
+zinit cdreplay -q
+
