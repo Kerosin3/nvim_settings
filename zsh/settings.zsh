@@ -74,6 +74,7 @@ bindkey '^r' history-incremental-search-backward
 zle -N edit-command-line
 autoload -Uz edit-command-line
 bindkey -M vicmd 'e' edit-command-line
+bindkey "^R" history-search-multi-word
 
 sudo-command-line() {
     [[ -z $BUFFER ]] && zle up-history

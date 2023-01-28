@@ -203,6 +203,7 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 zinit light Aloxaf/fzf-tab
+zinit light alexrochas/zsh-extract
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit load zdharma-continuum/history-search-multi-word
@@ -212,7 +213,6 @@ zinit light zsh-users/zsh-completions
 zinit ice depth=1
 #zinit light jeffreytse/zsh-vi-mode
 # extract archive .zip
-zinit light alexrochas/zsh-extract
 zinit light wfxr/forgit
 #misc for themes
 setopt promptsubst
@@ -236,10 +236,10 @@ zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 #zinit light sindresorhus/pure
 # ls colors
 #
-zinit light trapd00r/LS_COLORS
 zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
-    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
+#    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+#    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
+zinit light trapd00r/LS_COLORS
 
 #zinit light jonmosco/kube-ps1
 #PROMPT='$(kube_ps1)'$PROMPT
