@@ -229,7 +229,6 @@ if [ "$EUID" -ne 0 ]
 	zinit wait'!' lucid for \
 	OMZL::prompt_info_functions.zsh \
 	OMZT::jonathan
-  exit
 fi
 # prompt
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'

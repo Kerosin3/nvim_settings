@@ -19,8 +19,8 @@ setopt auto_name_dirs
 
 setopt SHARE_HISTORY
 HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
+SAVEHIST=10000
+HISTSIZE=9999
 setopt HIST_EXPIRE_DUPS_FIRST
 # not execute command from history instant
 setopt hist_verify
