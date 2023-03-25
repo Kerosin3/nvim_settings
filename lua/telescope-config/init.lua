@@ -5,6 +5,19 @@ end
 telescope.load_extension('media_files')
 
 local actions = require "telescope.actions"
+local telescope_actions = require("telescope.actions.set")
+local fixfolds = {
+    hidden = true,
+    attach_mappings = function(_)
+        telescope_actions.select:enhance({
+            post = function() vim.cmd(":normal! zx") end
+        })
+        return true
+    end
+}
+
+vim.keymap.set('n', '<leader>df', function() telescope_find_files_in_path() end)
+vim.keymap.set('n', '<leader>dd', function() telescope_live_grep_in_path() end)
 
 telescope.setup {
   defaults = {
@@ -79,14 +92,13 @@ telescope.setup {
     },
   },
   pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
-  },
+	buffers = fixfolds,
+        find_files = fixfolds,
+        git_files = fixfolds,
+        grep_string = fixfolds,
+        live_grep = fixfolds,
+        oldfiles = fixfolds
+      },
   extensions = {
 	 media_files = {
       -- filetypes whitelist
@@ -101,3 +113,26 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+_G.telescope_find_files_in_path = function(path)
+
+	local _path = path or vim.fn.input("Dir to search files: ", "", "dir")
+
+	if (string.len(_path)>0)
+	then
+	    require("telescope.builtin").find_files({search_dirs = {_path}})
+	else
+	    require("telescope.builtin").find_files({search_dirs = {"."}})
+	end
+
+end
+_G.telescope_live_grep_in_path = function(path)
+	local _path = path or vim.fn.input("Dir grep: ", "", "dir")
+	if (string.len(_path)>0)
+	then
+	    require("telescope.builtin").live_grep({search_dirs = {_path}})
+	else
+	    require("telescope.builtin").live_grep({search_dirs = {"."}})
+	end
+end
+
+

@@ -1,13 +1,23 @@
 {
 "languageserver": {
-  "clangd": {
+  "coc-clangd": {
+    "enable": true,
+    "path":"/usr/bin/",
     "command": "clangd",
     "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
-  },
-
-"clangd.arguments": ["--background-index","-std=c11"]
-},
+    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+    "fallbackFlags": ["-std=c++17"],
+    "arguments":  [
+	"--log=verbose",
+	"-j=4",
+	"--background-index",
+	"--clang-tidy",
+	"-std=c++17",
+	"--fallback-style=LLVM",
+	"--header-insertion=iwyu",
+	"--inlay-hints=true"
+	],
+  },},
 "diagnostic.virtualText": true,
 "diagnostic.virtualTextCurrentLineOnly": false,
 "diagnostic.autoRefresh": true,
@@ -22,7 +32,7 @@
 "diagnostic.virtualTextAlign":"after",
 "diagnostic.checkCurrentLine": true,
 "rust-analyzer.enable": true,
-"rust-analyzer.serverPath": "/home/kero/server_lang_rust/ra-multiplex/target/release/ra-multiplex",
+"rust-analyzer.serverPath": "/home/alexlinux/ra-multiplex/target/release/ra-multiplex",
 "rust-analyzer.inlayHints.parameterHints.enable": true,
 "rust-analyzer.inlayHints.chainingHints.enable": true,
 "rust-analyzer.inlayHints.renderColons": true,
@@ -40,6 +50,4 @@
 "rust-analyzer.highlightRelated.yieldPoints.enable":true,
 "rust-analyzer.lens.enable":true,
 "rust-analyzer.lens.references.trait.enable":true,
-"rust-analyzer.lens.run.enable":true,
-
-}
+"rust-analyzer.lens.run.enable": true,}
