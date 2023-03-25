@@ -273,4 +273,3 @@ done
 ###################################################################################
 [[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
 zinit cdreplay -q
-

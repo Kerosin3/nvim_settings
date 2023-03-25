@@ -1,3 +1,6 @@
+"let g:mapleader = "<Space>"
+nnoremap <SPACE> <Nop>
+let mapleader = " "
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tyru/open-browser.vim' " opens url in browser
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
@@ -18,7 +21,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'https://github.com/cdelledonne/vim-cmake'
 Plug 'Yggdroot/indentLine'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
@@ -49,12 +52,13 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 "Plug 'dense-analysis/ale'
 call plug#end()
 
+
 autocmd ColorScheme *
       \ hi CocUnusedHighlight ctermbg=NONE guibg=#94FFB9 guifg=#D433FF
 au FileType c,cpp,objc,objcpp,rs call rainbow#load()
  let g:rainbow_guifgs = ['aquamarine', 'chocolate1', 'plum1', 'darkseagreen1']
 let g:rainbow_active = 1
-:lua require("scrollbar").setup()
+:lua require("scrollbar-config")
 :lua require("tokio-night-config")
 :lua require("nvim-tree-config")
 :lua require("indent-blankline-config")
@@ -112,7 +116,6 @@ let g:coc_global_extensions = [
       \'coc-lightbulb',
       \]
 "      \'coc-spell-checker',
-
 set mouse=a
 set title
 set cursorline
@@ -214,7 +217,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 ":let mapleader="\<Space>"
 nnoremap <SPACE> <Nop>
-let mapleader=" "
+"let mapleader=" "
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
@@ -320,8 +323,8 @@ au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 
-"hi Visual  guifg=#94FFB9 guibg=#FFFFFF gui=none
-hi Visual  guifg=#00ff99 guibg=LightBlue gui=none
+hi Visual  guifg=#ff0000 guibg=LightBlue gui=none
+"hi Visual  guifg=#00ff99 guibg=LightBlue gui=none
 
 nnoremap <Space><Tab> cgn
 
@@ -350,3 +353,4 @@ set guicursor+=i:blinkwait10
 let g:rustfmt_autosave = 1
 hi CocInlayHint guibg=NONE guifg=#40e0d0 
 "hi default CocRustChainingHint guibg=Red guifg=Blue ctermbg=0 ctermfg=8
+
