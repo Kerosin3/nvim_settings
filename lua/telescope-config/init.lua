@@ -50,8 +50,11 @@ telescope.setup {
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
 
-        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+--        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+--        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+        ["<Tab>"] = actions.toggle_selection ,
+        ["<S-Tab>"] = actions.toggle_selection ,
+
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
         ["<C-l>"] = actions.complete_tag,
@@ -65,8 +68,11 @@ telescope.setup {
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
-        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+        ["<Tab>"] = actions.toggle_selection ,
+        ["<S-Tab>"] = actions.toggle_selection ,
+	--["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+        --["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
@@ -105,14 +111,36 @@ telescope.setup {
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
       filetypes = {"png", "webp", "jpg", "jpeg"},
       find_cmd = "rg" -- find command (defaults to `fd`)
-    }
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
+    },
+         file_browser = {
+      --theme = "ivy",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        },
+      },
+    },
+	 repo = {
+      list = {
+        fd_opts = {
+          "--no-ignore-vcs",
+        },
+        search_dirs = {
+          "~/my_projects",
+        },
+      },
+    },
+
   },
 }
+require("telescope").load_extension "file_browser"
+require("telescope").load_extension "repo"
+
 _G.telescope_find_files_in_path = function(path)
 
 	local _path = path or vim.fn.input("Dir to search files: ", "", "dir")
@@ -135,4 +163,4 @@ _G.telescope_live_grep_in_path = function(path)
 	end
 end
 
-
+vim.keymap.set('n', '<leader>fo', ':Telescope file_browser<CR>')
