@@ -18,7 +18,7 @@ local fixfolds = {
 
 vim.keymap.set('n', '<leader>df', function() telescope_find_files_in_path() end)
 vim.keymap.set('n', '<leader>dd', function() telescope_live_grep_in_path() end)
-
+vim.keymap.set('n', '<leader>FF', ':Telescope grep_string<CR>')
 telescope.setup {
   defaults = {
 
@@ -162,5 +162,8 @@ _G.telescope_live_grep_in_path = function(path)
 	    require("telescope.builtin").live_grep({search_dirs = {"."}})
 	end
 end
+vim.keymap.set('n', '<leader>fG', ':Telescope git_branches<CR>')
+
+vim.keymap.set('n', '<leader>fg', ':Telescope git_status<CR>')
 
 vim.keymap.set('n', '<leader>fo', ':Telescope file_browser<CR>')
