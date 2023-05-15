@@ -32,7 +32,7 @@
 "diagnostic.virtualTextAlign":"after",
 "diagnostic.checkCurrentLine": true,
 "rust-analyzer.enable": true,
-"rust-analyzer.serverPath": "/home/alexlinux/ra-multiplex/target/release/ra-multiplex",
+"rust-analyzer.serverPath": "/home/kero/ra-multiplex/target/release/ra-multiplex",
 "rust-analyzer.inlayHints.parameterHints.enable": true,
 "rust-analyzer.inlayHints.chainingHints.enable": true,
 "rust-analyzer.inlayHints.renderColons": true,
@@ -50,4 +50,6 @@
 "rust-analyzer.highlightRelated.yieldPoints.enable":true,
 "rust-analyzer.lens.enable":true,
 "rust-analyzer.lens.references.trait.enable":true,
-"rust-analyzer.lens.run.enable": true,}
+"rust-analyzer.lens.run.enable": true,
+"snippets.ultisnips.pythonPrompt": false,
+}

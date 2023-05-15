@@ -17,17 +17,17 @@ setopt auto_name_dirs
 #
 # History
 
-setopt SHARE_HISTORY
-HISTFILE=$HOME/.zhistory
-SAVEHIST=10000
-HISTSIZE=9999
-setopt HIST_EXPIRE_DUPS_FIRST
+#setopt SHARE_HISTORY
+#HISTFILE=$HOME/.zhistory
+#SAVEHIST=10000
+#HISTSIZE=9999
+#setopt HIST_EXPIRE_DUPS_FIRST
 # not execute command from history instant
-setopt hist_verify
+#setopt hist_verify
 # not add commandline with space to history
-setopt hist_ignore_space
+#setopt hist_ignore_space
 # ignore duplication command history list
-setopt hist_ignore_dups
+#setopt hist_ignore_dups
 
 #
 # other options
