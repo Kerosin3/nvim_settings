@@ -1,0 +1,16 @@
+[Unit]
+Description=rustlang server autostart
+
+Wants=network.target
+After=default.target
+
+[Service]
+Type=simple
+Environment="PATH=/home/kero/.cargo/bin"
+ExecStart=/home/kero/ra-multiplex/target/release/ra-multiplex-server
+#Restart=on-failure
+#RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=default.target

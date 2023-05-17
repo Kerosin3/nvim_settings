@@ -1,0 +1,14 @@
+[Unit]
+Description=rustlang server autostart
+
+#Wants=network.target
+#After=graphical.target
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/conky
+KillMode=process
+
+[Install]
+WantedBy=default.target
