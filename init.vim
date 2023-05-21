@@ -16,7 +16,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'frazrepo/vim-rainbow'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'https://github.com/cdelledonne/vim-cmake'
 Plug 'Yggdroot/indentLine'
@@ -54,9 +54,6 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 call plug#end()
 "KEYBINDINGS
 "[] jumps between code blocks
-" fix CR in auto-pair and coc
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() :
-  \ "\<C-g>u\<c-r>=v:lua.require'nvim-autopairs'.autopairs_cr()\<CR>"
 
 autocmd ColorScheme *
       \ hi CocUnusedHighlight ctermbg=NONE guibg=#94FFB9 guifg=#D433FF
@@ -117,6 +114,7 @@ let g:coc_global_extensions = [
       \'coc-json',
       \'coc-clangd',
       \'coc-cmake',
+      \'coc-pairs',
       \'coc-rust-analyzer',
       \'coc-yank',
       \'coc-lightbulb',
@@ -184,6 +182,9 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" fix CR in auto-pair and coc
+"inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() :
+"  \ "\<C-g>u\<c-r>=v:lua.require'nvim-autopairs'.autopairs_cr()\<CR>"
 
 
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
