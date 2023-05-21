@@ -54,7 +54,10 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 call plug#end()
 "KEYBINDINGS
 "[] jumps between code blocks
-
+"bindings!-----------------
+"[[ - go next block
+" C-k  C-j  insert line below\above
+" A-j  A-k   mode line above\below
 autocmd ColorScheme *
       \ hi CocUnusedHighlight ctermbg=NONE guibg=#94FFB9 guifg=#D433FF
 au FileType c,cpp,objc,objcpp,rs call rainbow#load()
@@ -101,7 +104,6 @@ set termguicolors
 syntax enable
 filetype plugin indent on
 "colorscheme papaya
-
 set clipboard=unnamedplus
 set background=dark 
 set nu!
@@ -124,6 +126,8 @@ set mouse=a
 set title
 set cursorline
 set encoding=utf-8 " Important to YCM
+set autoindent
+set smartindent
 map q :quit<CR> " for quit only type q on command mode
 "let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 "let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -375,4 +379,10 @@ set guicursor+=i:blinkwait10
 let g:rustfmt_autosave = 1
 hi CocInlayHint guibg=NONE guifg=#40e0d0 
 "hi default CocRustChainingHint guibg=Red guifg=Blue ctermbg=0 ctermfg=8
-
+nnoremap <c-k> m`O<esc>``
+nnoremap <c-j> m`o<esc>``
+inoremap <c-j> <esc>m`o<esc>``a
+inoremap <c-k> <esc>m`O<esc>``a
+" make enter after brakets work BRAINFUCK
+"https://vi.stackexchange.com/questions/28675/automatically-place-closing-curly-brace-on-new-line
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
