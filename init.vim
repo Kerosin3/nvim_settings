@@ -58,6 +58,7 @@ call plug#end()
 "[[ - go next block
 " C-k  C-j  insert line below\above
 " A-j  A-k   mode line above\below
+" Leader - d   - insert docs
 autocmd ColorScheme *
       \ hi CocUnusedHighlight ctermbg=NONE guibg=#94FFB9 guifg=#D433FF
 au FileType c,cpp,objc,objcpp,rs call rainbow#load()
@@ -386,3 +387,6 @@ inoremap <c-k> <esc>m`O<esc>``a
 " make enter after brakets work BRAINFUCK
 "https://vi.stackexchange.com/questions/28675/automatically-place-closing-curly-brace-on-new-line
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" set sensible highlight matches that don't obscure the text
+highlight MatchParen cterm=underline ctermbg=black ctermfg=NONE
+highlight MatchParen gui=underline guibg=#88cc99 guifg=NONE

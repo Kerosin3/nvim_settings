@@ -12,6 +12,7 @@
 # Path to your oh-my-zsh installation.
 #export ZSH="/home/ker0/.oh-my-zsh"
 export XILINXD_LICENSE_FILE="2100@DSPSRV"
+export PATH="/usr/lib/ccache:${PATH}" 
 #export QT_QPA_PLATFORM="xcb"
 #export QT_QPA_PLATFORMTHEME=qt5ct
 #export QT_XFT=true
