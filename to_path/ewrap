@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if [ -n "$TMUX" ] ; then
+    # tmux session running
+    tmux split-window -p 75 -h "nvim \"$*\""
+else
+	echo ERROR,NO TMUX
+fi

@@ -66,7 +66,7 @@ au FileType c,cpp,objc,objcpp,rs call rainbow#load()
 let g:rainbow_active = 1
 :lua require("scrollbar-config")
 :lua require("tokio-night-config")
-:lua require("nvim-tree-config")
+":lua require("nvim-tree-config")
 :lua require("indent-blankline-config")
 :lua require("telescope-config")
 :lua require("nvim-surround")
