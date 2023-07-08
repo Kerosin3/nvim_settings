@@ -151,7 +151,7 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
-export NNN_PLUG='g:!nvim $nnn*;c:!code $nnn*'
+export NNN_PLUG='g:!nvim $nnn*;c:!code $nnn*;d:diffs;f:finder'
 autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
 autoload -U colors && colors
