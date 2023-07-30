@@ -1,3 +1,5 @@
+"https://gist.github.com/awidegreen/3854277
+"vim shortcuts
 "let g:mapleader = "<Space>"
 nnoremap <SPACE> <Nop>
 let mapleader = " "
@@ -224,7 +226,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
@@ -390,3 +392,5 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 " set sensible highlight matches that don't obscure the text
 highlight MatchParen cterm=underline ctermbg=black ctermfg=NONE
 highlight MatchParen gui=underline guibg=#88cc99 guifg=NONE
+inoremap jj <ESC>
+noremap <C-s> :update<CR>
