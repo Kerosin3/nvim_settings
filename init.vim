@@ -394,3 +394,5 @@ highlight MatchParen cterm=underline ctermbg=black ctermfg=NONE
 highlight MatchParen gui=underline guibg=#88cc99 guifg=NONE
 inoremap jj <ESC>
 noremap <C-s> :update<CR>
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
