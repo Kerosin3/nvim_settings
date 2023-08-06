@@ -24,7 +24,7 @@
 				"-j=4",
 				"--background-index",
 				"--clang-tidy",
-				"-std=c++17",
+				"-std=c++20",
 				"--fallback-style=LLVM",
 				"--header-insertion=iwyu",
 				"--inlay-hints=true"
