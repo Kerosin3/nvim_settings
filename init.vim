@@ -396,3 +396,4 @@ inoremap jj <ESC>
 noremap <C-s> :update<CR>
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+inoremap <S-Tab> <C-V><Tab>
