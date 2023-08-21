@@ -1,0 +1,82 @@
+{
+	"workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+	"workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+	"editor.fontFamily": "Iosevka SS18 Semibold",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 18,
+	"editor.hover.delay": 10,
+	"editor.codeActionsOnSave": false,
+	"editor.formatOnSave": false,
+	"vim.easymotion": true,
+	"vim.incsearch": true,
+	"vim.useSystemClipboard": true,
+	"vim.useCtrlKeys": true,
+	"vim.hlsearch": true,
+	"vim.enableNeovim": true,
+	"vim.neovimPath": "",
+	"vim.neovimConfigPath": "/home/alex/.config/nvim",
+	"vim.neovimUseConfigFile": true,
+	"editor.quickSuggestions": {
+		"other": true,
+		"comments": false,
+		"strings": false
+	},
+	"editor.quickSuggestionsDelay": 10,
+	"vim.insertModeKeyBindings": [
+		{
+			"before": [
+				"j",
+				"j"
+			],
+			"after": [
+				"<Esc>"
+			]
+		}
+	],
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"<leader>",
+				"d"
+			],
+			"after": [
+				"d",
+				"d"
+			]
+		},
+		{
+			"before": [
+				"<C-n>"
+			],
+			"commands": [
+				":nohl"
+			]
+		},
+		{
+			"before": [
+				"K"
+			],
+			"commands": [
+				"lineBreakInsert"
+			],
+			"silent": true
+		}
+	],
+	"vim.leader": "<space>",
+	"vim.handleKeys": {
+		"<C-a>": false,
+		"<C-f>": false
+	},
+	"[cpp]": {
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"workbench.hover.delay": 10,
+	"workbench.sash.hoverDelay": 10,
+	"C_Cpp.intelliSenseCacheSize": 0,
+	"C_Cpp.intelliSenseEngine": "disabled",
+	"C_Cpp.suggestSnippets": false,
+	"C_Cpp.default.cppStandard": "c++20",
+	"C_Cpp.default.cStandard": "c17",
+	"cmake.configureOnOpen": true,
+	"editor.inlayHints.enabled": "offUnlessPressed"
+}
