@@ -6,7 +6,7 @@
 	},
 	{
 		"key": "ctrl+k",
-		"command": "-selectPrevSuggestion",
+		"command": "selectPrevSuggestion",
 		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
 	},
 	{
@@ -16,7 +16,15 @@
 	},
 	{
 		"key": "tab",
-		"command": "-selectNextSuggestion",
+		"command": "selectNextSuggestion",
 		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+b",
+		"command": "workbench.action.nextEditor"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.previousEditor"
 	}
 ]
