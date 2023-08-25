@@ -26,5 +26,13 @@
 	{
 		"key": "ctrl+n",
 		"command": "workbench.action.previousEditor"
+	},
+	{
+		"key": "shift+q",
+		"command": "editor.action.quickFix"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "editor.action.formatDocument"
 	}
 ]
