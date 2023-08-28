@@ -116,8 +116,8 @@ let g:coc_global_extensions = [
       \'coc-explorer',
       \'coc-git',
       \'coc-snippets',
-      \'coc-json',
       \'coc-clangd',
+      \'coc-json',
       \'coc-cmake',
       \'coc-pairs',
       \'coc-rust-analyzer',
@@ -125,6 +125,7 @@ let g:coc_global_extensions = [
       \'coc-lightbulb',
       \]
 "      \'coc-spell-checker',
+
 set mouse=a
 set title
 set cursorline
