@@ -1,12 +1,29 @@
 {
+	"telemetry.enableTelemetry": false,
 	"workbench.colorTheme": "Monokai Pro (Filter Octagon)",
 	"workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+	"workbench.colorCustomizations": {
+		"editor.findMatchBackground": "#00cc44a8",
+		"editor.findMatchHighlightBackground": "#ff7b00a1",
+		"editor.selectionBackground": "#ccf5ff",
+		"editor.wordHighlightBackground": "#b3ffb350",
+		"editorBracketMatch.border": "#e6f9ff",
+		"editorBracketMatch.background": "#ffffb390"
+	},
 	"editor.fontFamily": "Mononoki Nerd Font",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 20,
 	"editor.hover.delay": 10,
 	"editor.codeActionsOnSave": false,
 	"editor.formatOnSave": false,
+	"editor.matchBrackets": "always",
+	"editor.bracketPairColorization.enabled": true,
+	"editor.language.colorizedBracketPairs": [
+		[
+			"(",
+			")"
+		]
+	],
 	"vim.easymotion": true,
 	"vim.incsearch": true,
 	"vim.useSystemClipboard": true,
