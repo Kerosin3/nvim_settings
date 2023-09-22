@@ -20,7 +20,7 @@
 		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
 	},
 	{
-		"key": "ctrl+b",
+		"key": "ctrl+m",
 		"command": "workbench.action.nextEditor"
 	},
 	{
