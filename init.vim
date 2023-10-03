@@ -52,7 +52,6 @@ Plug 'ggandor/lightspeed.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
-"Plug 'dense-analysis/ale'
 call plug#end()
 "KEYBINDINGS
 "[] jumps between code blocks
@@ -179,11 +178,13 @@ set signcolumn=yes
 " no select by `"suggest.noselect": true` in your configuration file
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config
+
+
 inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! CheckBackspace() abort
   let col = col('.') - 1
@@ -397,4 +398,3 @@ inoremap jj <ESC>
 noremap <C-s> :update<CR>
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-inoremap <S-Tab> <C-V><Tab>

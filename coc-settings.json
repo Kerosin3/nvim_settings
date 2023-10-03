@@ -32,6 +32,8 @@
 	"coc.preferences.formatOnSave": true,
 	"coc.preferences.formatOnType": false,
 	"inlayHint.enable": true,
+	"diagnostic.virtualTextLines": 10,
+	"diagnostic.separateRelatedInformationAsDiagnostics": true,
 	"coc.preferences.willSaveHandlerTimeout": 1000,
 	"coc.preferences.useQuickfixForLocations": true,
 	"coc.preferences.enableLinkedEditing": true,
@@ -39,21 +41,24 @@
 	"coc.source.file.ignoreHidden": false,
 	"diagnostic.enable": true,
 	"diagnostic.displayByAle": false,
-	"diagnostic.enableMessage": "never",
+	"diagnostic.messageTarget": "echo",
 	"diagnostic.virtualText": true,
 	"diagnostic.virtualTextCurrentLineOnly": true,
 	"diagnostic.checkCurrentLine": true,
+	"diagnostic.virtualTextAlign": "below",
+	"diagnostic.virtualTextWinCol": 40,
 	"diagnostic.autoRefresh": true,
-	"diagnostic.hintSign": "+>",
 	"diagnostic.enableSign": true,
 	"diagnostic.highlightPriority": 4096,
 	"diagnostic.refreshOnInsertMode": true,
-	"diagnostic.virtualTextLimitInOneLine": 2,
+	"diagnostic.virtualTextLimitInOneLine": 5,
 	"diagnostic.enableHighlightLineNumber": true,
 	"diagnostic.level": "warning",
-	"diagnostic.errorSign": "●",
-	"diagnostic.warningSign": "⚠",
-	"diagnostic.virtualTextAlign": "after",
+	"diagnostic.errorSign": "✘",
+	"diagnostic.warningSign": "",
+	"diagnostic.infoSign": "⚡",
+	"diagnostic.hintSign": "",
+	"diagnostic.enableMessage": "jump",
 	"rust-analyzer.enable": true,
 	"rust-analyzer.serverPath": "/home/userldx/ra-multiplex/target/release/ra-multiplex",
 	"rust-analyzer.inlayHints.parameterHints.enable": true,
@@ -78,4 +83,54 @@
 	"rust-analyzer.lens.run.enable": true,
 	"snippets.ultisnips.pythonPrompt": false,
 	"rust-analyzer.references.excludeImports": true,
+	"suggest.completionItemKindLabels": {
+		"keyword": "\uf1de", //  sliders
+		"variable": "\ue79b", //  isometric box
+		"value": "\uf89f", //  digits 123
+		"operator": "\u03a8", // Ψ greek letter psi
+		"constructor": "\uf0ad", //  wrench
+		"function": "\u0192", // ƒ latin small letter F
+		"reference": "\ufa46", // 渚 retweet symbol
+		"constant": "\uf8fe", //  greek letter pi
+		"method": "\uf09a", //  facebook "f"
+		"struct": "\ufb44", // פּ file tree
+		"class": "\uf0e8", //  hierarchy / site map
+		"interface": "\uf417", //  git commit / line interrupted by circle
+		"text": "\ue612", //  left-justified lines
+		"enum": "\uf02c", //  pair of tags
+		"enumMember": "\uf02b", //  tag
+		"module": "\uf40d", //  code file / page showing angle brackets
+		"color": "\ue22b", //  palette
+		"property": "\ue624", //  predator dots
+		"field": "", // left-justified sorted lines
+		"unit": "\uf475", //  negative-space ellipsis
+		"event": "\ufacd", // 鬒clock alert / clock with exclamation mark
+		"file": "\uf15b", //  file / blank page
+		"folder": "\uf07b", //  folder
+		"snippet": "\ue60b", //  pair of curly braces
+		"typeParameter": "\uf728", //  file presentation box
+		"default": "\uf29c" //  question mark in circle
+	},
+	"suggest.floatConfig": {
+		"border": true,
+		"rounded": true,
+		"winblend": 10,
+		"maxWidth": 60,
+	},
+	"diagnostic.floatConfig": {
+		"border": true,
+		"rounded": false,
+		"winblend": 10,
+	},
+	"git.changedSign.text": "▌",
+	"git.addedSign.text": "▌",
+	"git.removedSign.text": "▁",
+	"git.changeRemovedSign.text": "▁",
+	"git.topRemovedSign.text": "▔",
+	"git.changedDecorator": " ",
+	"git.stagedDecorator": " ",
+	"git.untrackedDecorator": " ✩",
+	"git.conflictedDecorator": "⇡⇣",
+	"git.addGBlameToVirtualText": false,
+	"git.virtualTextPrefix": " \ue729 ",
 }

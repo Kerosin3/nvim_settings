@@ -1,0 +1,250 @@
+{
+    "diagnostic.enable": true,
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.errorSign": "✘",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "⚡",
+    "diagnostic.hintSign": "",
+    "diagnostic.enableMessage": "jump",
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": true,
+    "diagnostic.refreshOnInsertMode": true,
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls-cache"
+                },
+                "client": {
+                    "snippetSupport": true
+                }
+            }
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"]
+        },
+        "vala": {
+            "command": "vala-language-server",
+            "filetypes": ["vala", "genie"]
+        },
+        "nginx-language-server": {
+            "command": "nginx-language-server",
+            "filetypes": ["nginx"],
+            "rootPatterns": ["nginx.conf", ".git"]
+        },
+        "lua": {
+            "command": "lua-language-server",
+            "args": [
+                "-E",
+                "/usr/lib/lua-language-server/bin/main.lua"
+            ],
+            "filetypes": ["lua"],
+            "settings": {
+                "Lua": {
+                    "workspace.library": {
+                        "/usr/share/nvim/runtime/lua": true,
+                        "/usr/share/nvim/runtime/lua/vim": true,
+                        "/usr/share/nvim/runtime/lua/vim/lsp": true
+                    },
+                    "diagnostics": {
+                        "globals": [ "vim" ]
+                    }
+                }
+            }
+        },
+        "racket": {
+            "command": "racket",
+            "args": [
+                "--lib",
+                "racket-langserver"
+            ],
+            "filetypes": [
+                "scheme"
+            ]
+        },
+        "haskell": {
+            "command": "haskell-language-server-wrapper",
+            "args": ["--lsp"],
+            "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+            "filetypes": ["haskell", "lhaskell"]
+        },
+        "tagls": {
+            "command": "python3",
+            "args": ["-m", "tagls"],
+            "filetypes": [
+                "vim",
+                "fortran"
+            ],
+            "initializationOptions": {
+                "cache_dir": "/tmp/gtags"
+            },
+            "settings": {}
+        }
+    },
+    "suggest.completionItemKindLabels": {
+        "keyword": "\uf1de", //  sliders
+        "variable": "\ue79b", //  isometric box
+        "value": "\uf89f", //  digits 123
+        "operator": "\u03a8", // Ψ greek letter psi
+        "constructor": "\uf0ad", //  wrench
+        "function": "\u0192", // ƒ latin small letter F
+        "reference": "\ufa46", // 渚 retweet symbol
+        "constant": "\uf8fe", //  greek letter pi
+        "method": "\uf09a", //  facebook "f"
+        "struct": "\ufb44", // פּ file tree
+        "class": "\uf0e8", //  hierarchy / site map
+        "interface": "\uf417", //  git commit / line interrupted by circle
+        "text": "\ue612", //  left-justified lines
+        "enum": "\uf02c", //  pair of tags
+        "enumMember": "\uf02b", //  tag
+        "module": "\uf40d", //  code file / page showing angle brackets
+        "color": "\ue22b", //  palette
+        "property": "\ue624", //  predator dots
+        "field": "", // left-justified sorted lines
+        "unit": "\uf475", //  negative-space ellipsis
+        "event": "\ufacd", // 鬒clock alert / clock with exclamation mark
+        "file": "\uf15b", //  file / blank page
+        "folder": "\uf07b", //  folder
+        "snippet": "\ue60b", //  pair of curly braces
+        "typeParameter": "\uf728", //  file presentation box
+        "default": "\uf29c" //  question mark in circle
+    },
+    "suggest.floatConfig": {
+        "border": true,
+        "rounded": true,
+        "winblend": 10
+    },
+    "suggest.enablePreselect": false,
+    "explorer.keyMappings.global": {
+        "gk": "expandablePrev",
+        "gj": "expandableNext",
+
+        "*": "toggleSelection",
+        "M": "actionMenu",
+
+        "h": "collapse",
+        "l": ["expandable?", "expand", "open"],
+        "J": ["toggleSelection", "nodeNext"],
+        "K": ["toggleSelection", "nodePrev"],
+        "gl": "expandRecursive",
+        "gh": "collapseRecursive",
+        "<2-LeftMouse>": [
+            "expandable?",
+            ["expanded?", "collapse", "expand"],
+            "open"
+        ],
+        "o": ["expanded?", "collapse", "expand"],
+        "<cr>": ["expandable?", "cd", "open"],
+        "<tab>": ["expanded?", "collapse", "expand"],
+        "e": "open",
+        "s": "open:split",
+        "S": "open:split:plain",
+        "E": "open:vsplit",
+        "b": "open:tab",
+        "<bs>": "gotoParent",
+        "gp": "preview:labeling",
+
+        "y": "copyFilepath",
+        "Y": "copyFilename",
+        "c": "copyFile",
+        "m": "cutFile",
+        "p": "pasteFile",
+        "d": "delete",
+        "D": "deleteForever",
+
+        "a": "addFile",
+        "A": "addDirectory",
+        "r": "rename",
+
+        "i": "toggleHidden",
+        "R": "refresh",
+
+        "?": "help",
+        "q": "quit",
+        "<esc>": "esc",
+        "X": "systemExecute",
+        "gd": "listDrive",
+
+        "f": "search",
+        "F": "searchRecursive",
+
+        "gf": "gotoSource:file",
+        "gb": "gotoSource:buffer",
+
+        "[[": "sourcePrev",
+        "]]": "sourceNext",
+
+        "[d": "diagnosticPrev",
+        "]d": "diagnosticNext",
+
+        "[c": "gitPrev",
+        "]c": "gitNext",
+        "<<": "gitStage",
+        ">>": "gitUnstage"
+    },
+    "eslint.packageManager": "yarn",
+    "eslint.quiet": true,
+    "snippets.ultisnips.directories": ["$runtimepath/UltiSnips", "UltiSnips"],
+    "volar.autoClosingTags": true,
+    "volar.autoCompleteRefs": true,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.icon.source": "vim-devicons",
+    "explorer.git.enable": true,
+    "explorer.file.showHiddenFiles": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.git.icon.status.modified": "✹",
+    "explorer.git.icon.status.added": "✚",
+    "explorer.git.icon.status.untracked": "✭",
+    "explorer.git.icon.status.renamed": "➜",
+    "explorer.git.icon.status.unmerged": "═",
+    "explorer.git.icon.status.deleted": "✖",
+    "explorer.file.reveal.auto": false,
+    "tsserver.npm": "/usr/bin/tsserver",
+    "tsserver.disableAutomaticTypeAcquisition": false,
+    "html.autoClosingTags": false,
+    "svelte.enable-ts-plugin": true,
+    "python.linting.enabled": true,
+    "git.changedSign.text": "▌",
+    "git.addedSign.text": "▌",
+    "git.removedSign.text": "▁",
+    "git.changeRemovedSign.text": "▁",
+    "git.topRemovedSign.text": "▔",
+    "git.changedDecorator": " ",
+    "git.stagedDecorator": " ",
+    "git.untrackedDecorator": " ✩",
+    "git.conflictedDecorator": "⇡⇣",
+    "git.addGBlameToVirtualText": false,
+    "git.virtualTextPrefix": " \ue729 ",
+    "coc.source.file.shortcut": "F",
+    "coc.source.file.priority": 89,
+    "coc.source.file.ignoreHidden": false,
+    "coc.source.around.shortcut": "A",
+    "coc.source.around.priority": 88,
+    "coc.source.buffer.shortcut": "B",
+    "coc.source.buffer.priority": 87,
+    "coc.source.buffer.ignoreGitignore": false,
+    "codeLens.enable": true,
+    "codeLens.separator": "▸",
+    "intelephense.progress.enable": false,
+    "omnisharp.path": "/usr/bin/omnisharp",
+    "translator.proxy": "socks://127.0.0.1:1080",
+    "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+    "vimlsp.indexes.runtimepath": true,
+    "vimlsp.suggest.fromRuntimepath": true,
+    "highlight.disableLanguages": ["org"],
+    "stylua.styluaPath": "/usr/bin/stylua",
+    "stylua.configPath": "/home/aerian/.vim/stylua.toml",
+    "coc.source.word.max": 4,
+    "snippets.ultisnips.pythonPrompt": false
+}
