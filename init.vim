@@ -417,4 +417,5 @@ set foldexpr=nvim_treesitter#foldexpr()
 " zX - close all folds
 "set nofoldenable                     " Disable folding at startup.
 "autocmd BufReadPost,FileReadPost * normal zR
-
+noremap <silent> <M-k> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
+noremap <silent> <M-j> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
