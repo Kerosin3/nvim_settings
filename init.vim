@@ -72,6 +72,7 @@ let g:rainbow_active = 1
 :lua require("telescope-config")
 :lua require("nvim-surround")
 :lua require("toggleterm_config")
+:lua require("treesitter")
 " mapping to open a specific window.
 " For example: 2<C-t> will open terminal 2
 nnoremap <C-\> :ToggleTerm direction=horizontal size=17 start_in_insert=true close_on_exit=true<CR>
@@ -384,8 +385,10 @@ set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
+
+
 let g:rustfmt_autosave = 1
-hi CocInlayHint guibg=NONE guifg=#40e0d0 
+hi CocInlayHint guibg=NONE guifg=#40e0d0
 "hi default CocRustChainingHint guibg=Red guifg=Blue ctermbg=0 ctermfg=8
 nnoremap <c-k> m`O<esc>``
 nnoremap <c-j> m`o<esc>``
@@ -402,3 +405,16 @@ noremap <C-s> :update<CR>
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 let g:ycm_clangd_args=['--header-insertion=never']
+":hi TabLineFill ctermfg=LightGreen ctermbg=DarkGreen
+":hi TabLine ctermfg=Blue ctermbg=Yellow
+":hi TabLineSel ctermfg=Red ctermbg=Yellow
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+" zo - open current fold, za
+" zc - close current fold
+" zx - open this and close all others
+" zR - open all folds
+" zX - close all folds
+"set nofoldenable                     " Disable folding at startup.
+"autocmd BufReadPost,FileReadPost * normal zR
+
