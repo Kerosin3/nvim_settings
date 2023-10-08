@@ -61,7 +61,8 @@ call plug#end()
 " A-j  A-k   mode line above\below
 " Leader - d   - insert docs
 autocmd ColorScheme *
-      \ hi CocUnusedHighlight ctermbg=NONE guibg=#94FFB9 guifg=#D433FF
+      \ hi CocUnusedHighlight ctermbg=NONE guibg=none guifg=#94FFB9
+      "\ hi CocUnusedHighlight ctermbg=NONE guibg=#94FFB9 guifg=#D433FF
 au FileType c,cpp,objc,objcpp,rs call rainbow#load()
  let g:rainbow_guifgs = ['aquamarine', 'chocolate1', 'plum1', 'darkseagreen1']
 let g:rainbow_active = 1
@@ -419,3 +420,8 @@ set foldexpr=nvim_treesitter#foldexpr()
 "autocmd BufReadPost,FileReadPost * normal zR
 noremap <silent> <M-k> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 noremap <silent> <M-j> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+set splitright
+" C-w + v - verical split
+" C-w + q - close current split
+" C-w + w - switch between tabs
+" C-v open in vsplit   TELESCAPE
