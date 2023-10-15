@@ -425,3 +425,4 @@ set splitright
 " C-w + q - close current split
 " C-w + w - switch between tabs
 " C-v open in vsplit   TELESCAPE
+set hlsearch

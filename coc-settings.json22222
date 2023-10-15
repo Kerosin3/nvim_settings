@@ -2,7 +2,8 @@
 	"languageserver": {
 		"coc-clangd": {
 			"enable": true,
-			"command": "clangd",
+			"path": "/usr/bin/",
+			"command": "clangd-16",
 			"trace.server": "verbose",
 			"arguments": [
 				"--header-insertion=never",
@@ -135,4 +136,5 @@
 	"git.conflictedDecorator": "⇡⇣",
 	"git.addGBlameToVirtualText": false,
 	"git.virtualTextPrefix": " \ue729 ",
+	"clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/16.0.2/clangd_16.0.2/bin/clangd",
 }
