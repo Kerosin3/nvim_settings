@@ -1,11 +1,12 @@
 {
 	"telemetry.enableTelemetry": false,
-	"workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+	"workbench.colorTheme": "Tokyo Night Storm",
 	"workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
 	"workbench.colorCustomizations": {
+		"editor.selectionBackground": "#135564",
+		"editor.selectionHighlightBackground": "#135564",
 		"editor.findMatchBackground": "#00cc44a8",
 		"editor.findMatchHighlightBackground": "#ff7b00a1",
-		"editor.selectionBackground": "#ccf5ff",
 		"editor.wordHighlightBackground": "#b3ffb350",
 		"editorBracketMatch.border": "#e6f9ff",
 		"editorBracketMatch.background": "#ffffb390"
