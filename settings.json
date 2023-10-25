@@ -12,8 +12,7 @@
 	},
 	"editor.fontFamily": "Mononoki Nerd Font",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 20,
-	"editor.hover.delay": 10,
+	"editor.fontSize": 24,
 	"editor.codeActionsOnSave": false,
 	"editor.formatOnSave": false,
 	"editor.matchBrackets": "always",
@@ -34,6 +33,9 @@
 	"vim.neovimPath": "",
 	"vim.neovimConfigPath": "/home/alex/.config/nvim",
 	"vim.neovimUseConfigFile": true,
+	"editor.minimap.scale": 2,
+	"editor.hover.delay": "500",
+	"editor.minimap.renderCharacters": false,
 	"editor.quickSuggestions": {
 		"other": true,
 		"comments": false,
@@ -88,13 +90,36 @@
 	"[cpp]": {
 		"editor.defaultFormatter": "xaver.clang-format"
 	},
-	"workbench.hover.delay": 10,
-	"workbench.sash.hoverDelay": 10,
+	"vim.normalModeKeyBindings": [
+		{
+			"before": [
+				"<leader>",
+				"a"
+			],
+			"commands": [
+				"workbench.view.explorer"
+			]
+		}
+	],
+	"vim.normalModeKeyBindings": [
+		{
+			"before": [
+				"<leader>",
+				"d"
+			],
+			"commands": [
+				"workbench.action.findInFiles"
+			]
+		}
+	],
+	"workbench.hover.delay": 1000,
+	"workbench.sash.hoverDelay": 1000,
 	"C_Cpp.intelliSenseCacheSize": 0,
 	"C_Cpp.intelliSenseEngine": "disabled",
 	"C_Cpp.suggestSnippets": false,
 	"C_Cpp.default.cppStandard": "c++20",
 	"C_Cpp.default.cStandard": "c17",
 	"cmake.configureOnOpen": true,
-	"editor.inlayHints.enabled": "offUnlessPressed"
+	"editor.inlayHints.enabled": "offUnlessPressed",
+	"errorLens.gutterIconsEnabled": true
 }

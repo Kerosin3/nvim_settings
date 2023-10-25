@@ -39,5 +39,61 @@
 		"key": "shift+h",
 		"command": "editor.action.showHover",
 		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt",
+		"command": "editor.action.showHover",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt",
+		"command": "editor.action.showHover",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+'",
+		"command": "workbench.action.terminal.toggleTerminal",
+		"when": "!terminalFocus"
+	},
+	{
+		"key": "ctrl+'",
+		"command": "workbench.action.terminal.toggleTerminal",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+0",
+		"command": "-workbench.action.focusSideBar"
+	},
+	{
+		"key": "ctrl+0",
+		"when": "!sideBarFocus",
+		"command": "workbench.action.focusSideBar"
+	},
+	{
+		"key": "ctrl+0",
+		"when": "sideBarFocus",
+		"command": "workbench.action.focusActiveEditorGroup"
+	},
+	{
+		"key": "space+e",
+		"command": "workbench.files.action.focusFilesExplorer",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+e",
+		"command": "workbench.view.explorer"
+	},
+	{
+		"key": "cmd+e",
+		"command": "-workbench.view.explorer"
+	},
+	{
+		"key": "ctrl+f",
+		"command": "actions.find",
+		"when": "editorFocus || editorIsOpen"
+	},
+	{
+		"key": "ctrl+x",
+		"command": "extension.searchUnderCursor"
 	}
 ]
