@@ -11,6 +11,16 @@
 		"editorBracketMatch.border": "#e6f9ff",
 		"editorBracketMatch.background": "#ffffb390"
 	},
+	"indentRainbow.indicatorStyle": "light",
+	"indentRainbow.lightIndicatorStyleLineWidth": 2,
+	"editor.guides.indentation": false,
+	"indentRainbow.colors": [
+		"rgba(255,255,64,0.6)",
+		"rgba(127,255,127, 0.6)",
+		"rgba(255,127,255, 0.6)",
+		"rgba(79,236,236, 0.6)"
+	],
+	"editor.renderWhitespace": "all",
 	"editor.fontFamily": "Mononoki Nerd Font",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 24,
