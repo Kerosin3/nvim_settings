@@ -95,5 +95,9 @@
 	{
 		"key": "ctrl+x",
 		"command": "extension.searchUnderCursor"
+	},
+	{
+		"key": "ctrl+shift+r",
+		"command": "cmake.projectStatus.launchTarget"
 	}
 ]
