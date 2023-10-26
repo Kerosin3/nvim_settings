@@ -1,6 +1,6 @@
 {
 	"telemetry.enableTelemetry": false,
-	"workbench.colorTheme": "Tokyo Night Storm",
+	"workbench.colorTheme": "Tokyo Hack",
 	"workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
 	"workbench.colorCustomizations": {
 		"editor.selectionBackground": "#135564",

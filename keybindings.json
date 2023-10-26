@@ -36,6 +36,10 @@
 		"command": "editor.action.formatDocument"
 	},
 	{
+		"key": "ctrl+shift+n",
+		"command": "editor.action.formatSelection"
+	},
+	{
 		"key": "shift+h",
 		"command": "editor.action.showHover",
 		"when": "editorTextFocus"
