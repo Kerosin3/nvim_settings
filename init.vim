@@ -257,9 +257,6 @@ nnoremap <SPACE> <Nop>
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -310,6 +307,11 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
+" format whole doc
+"noremap <silent> <M-w> Format
+:map <leader>g :Format<CR>
+
+"noremap <silent> <M-k> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 
 " Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
@@ -403,8 +405,12 @@ highlight MatchParen cterm=underline ctermbg=black ctermfg=NONE
 highlight MatchParen gui=underline guibg=#88cc99 guifg=NONE
 inoremap jj <ESC>
 noremap <C-s> :update<CR>
-vmap <leader>f  <Plug>(coc-format-selected)
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+
+
 let g:ycm_clangd_args=['--header-insertion=never']
 ":hi TabLineFill ctermfg=LightGreen ctermbg=DarkGreen
 ":hi TabLine ctermfg=Blue ctermbg=Yellow
@@ -425,4 +431,6 @@ set splitright
 " C-w + q - close current split
 " C-w + w - switch between tabs
 " C-v open in vsplit   TELESCAPE
+" C+\ - open bottom terminal, \\ - close
+" C+ ] - open floating terminal
 set hlsearch

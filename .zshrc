@@ -156,6 +156,7 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
 autoload -U colors && colors
 alias ls='ls --color=auto'
+alias dmesg = 'sudo dmesg --decode --nopager --color --ctime'
 #export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:*.tar=1;31:*.gz=1;31:*.tbz2=1;31"
 #PS1="%{$fg[green]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%(5~|%-1~/.../%3~|%4~) %{$reset_color%}%% "
 export NNN_BMS="u:$HOME/;m:/mnt/;e:/etc/;n:/mnt/network_share"
