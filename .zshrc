@@ -14,6 +14,7 @@ export PATH="/home/$USER/.local/bin:${PATH}"
 # Path to your oh-my-zsh installation.
 #export ZSH="/home/ker0/.oh-my-zsh"
 export XILINXD_LICENSE_FILE="2100@DSPSRV"
+export CSCOPE_EDITOR=`which nvim`
 export VISUAL=ewrap
 #export QT_QPA_PLATFORM="xcb"
 #export QT_QPA_PLATFORMTHEME=qt5ct

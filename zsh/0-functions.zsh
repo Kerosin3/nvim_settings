@@ -17,6 +17,16 @@ pathadd_post(){
     fi
   fi
 }
+cscope_cl(){
+  echo "creating database for cscope"
+  sudo find . -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" > cscope.files
+  if [ $? -eq 0 ]; then
+    cscope -q -R -b -i cscope.files
+  else
+    echo "cannot create datascope"
+  fi
+}
+
 frepl() {
   if [ $# -lt 2 ]
   then
