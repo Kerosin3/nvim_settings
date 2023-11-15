@@ -14,3 +14,7 @@ code --list-extensions | xargs -L 1 code --uninstall-extension
 
 ctrl+shift+L -> select all occurences
 shift+q - > quickfix
+
+Ctrl+Shift+L to select all occurrences of current selection
+
+Ctrl+F2 to select all occurrences of current word
