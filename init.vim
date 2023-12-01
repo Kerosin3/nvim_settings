@@ -408,7 +408,9 @@ noremap <C-s> :update<CR>
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
+" format full doc
+xmap <leader>F :Format<CR>
+nmap <leader>F :Format<CR>
 
 
 let g:ycm_clangd_args=['--header-insertion=never']
@@ -434,3 +436,6 @@ set splitright
 " C+\ - open bottom terminal, \\ - close
 " C+ ] - open floating terminal
 set hlsearch
+
+command! SvBuildIndex call CocRequest("svlangserver", 'workspace/executeCommand', {'command': 'systemverilog.build_index'})
+command! -range SvReportHierarchy call CocRequest("svlangserver", 'workspace/executeCommand', {'command': 'systemverilog.report_hierarchy', 'arguments': [input('Module/interface: ', <range> == 0 ? "" : expand("<cword>"))]})

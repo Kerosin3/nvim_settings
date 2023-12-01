@@ -26,6 +26,17 @@
 				"-std=c++20",
 			],
 		},
+		"svlangserver": {
+	            "command": "svlangserver",
+        	    "filetypes": ["systemverilog"],
+	            "settings": {
+        	        "systemverilog.includeIndexing": ["**/*.{sv,svh}"],
+                	"systemverilog.excludeIndexing": ["test/**/*.sv*"],
+                	"systemverilog.defines" : [],
+                	"systemverilog.launchConfiguration": "/usr/local/bin/verilator -sv -Wall --lint-only",
+	                "systemverilog.formatCommand": "/usr/local/bin/verible-verilog-format"
+            		}
+        	}
 	},
 	"coc.preferences.extensionUpdateCheck": "daily",
 	"coc.preferences.enableMessageDialog": true,
