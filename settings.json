@@ -159,5 +159,8 @@
 	"errorLens.gutterIconsEnabled": true,
 	"clang-format.language.cpp.style": "file",
 	"C_Cpp.clang_format_path": "${workspaceFolder}/.clang-format",
-	"editor.guides.bracketPairs": true
+	"editor.guides.bracketPairs": true,
+	"C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+	"C_Cpp.inlayHints.parameterNames.enabled": true,
+        "C_Cpp.inlayHints.referenceOperator.enabled": true
 }

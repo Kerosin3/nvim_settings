@@ -98,5 +98,9 @@
 	{
 		"key": "ctrl+shift+r",
 		"command": "cmake.projectStatus.launchTarget"
+	},
+	{
+		"key": "shift+h",
+		"command": "editor.action.showDefinitionPreviewHover"
 	}
 ]
