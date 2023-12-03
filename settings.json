@@ -8,8 +8,26 @@
 		"editor.findMatchBackground": "#00cc44a8",
 		"editor.findMatchHighlightBackground": "#ff7b00a1",
 		"editor.wordHighlightBackground": "#b3ffb350",
-		"editorBracketMatch.border": "#e6f9ff",
-		"editorBracketMatch.background": "#ffffb390"
+		"editorBracketMatch.border": "#aa0000",
+		"editorBracketMatch.background": "#16FAD870",
+		"editorBracketPairGuide.background1": "#F8B46C",
+	        "editorBracketPairGuide.background2": "#FB78B5",
+      	 	"editorBracketPairGuide.background3": "#4AACFB",
+	        "editorBracketPairGuide.background4": "#B98BF5",
+	        "editorBracketPairGuide.background5": "#DAD8D8",
+	        "editorBracketPairGuide.background6": "#18EECE",
+	        "editorBracketPairGuide.activeBackground1": "#F367C9",
+      "editorBracketPairGuide.activeBackground2": "#FD70B2",
+      "editorBracketPairGuide.activeBackground3": "#41A7FA",
+      "editorBracketPairGuide.activeBackground4": "#B084EB",
+      "editorBracketPairGuide.activeBackground5": "#DBDADA",
+      "editorBracketPairGuide.activeBackground6": "#16FAD8",
+		"editorBracketHighlight.foreground1": "#3700ff",
+		"editorBracketHighlight.foreground2": "#66ff00",
+		"editorBracketHighlight.unexpectedBracket.foreground": "#aa0000",
+		"editorCursor.foreground": "#ffff10",
+		"terminalCursor.foreground": "#ffff00"
+
 	},
 	"indentRainbow.indicatorStyle": "light",
 	"indentRainbow.lightIndicatorStyleLineWidth": 2,
@@ -23,7 +41,7 @@
 	"editor.renderWhitespace": "all",
 	"editor.fontFamily": "Mononoki Nerd Font",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 19,
+	"editor.fontSize": 20,
 	"editor.codeActionsOnSave": false,
 	"editor.formatOnSave": false,
 	"editor.matchBrackets": "always",
@@ -31,7 +49,13 @@
 	"editor.language.colorizedBracketPairs": [
 		[
 			"(",
-			")"
+			")",
+			">",
+			"<",
+			"{",
+			"}",
+			"[",
+			"]"
 		]
 	],
 	"errorLens.followCursor": "activeLine",
@@ -134,5 +158,6 @@
 	"editor.inlayHints.enabled": "offUnlessPressed",
 	"errorLens.gutterIconsEnabled": true,
 	"clang-format.language.cpp.style": "file",
-	"C_Cpp.clang_format_path": "${workspaceFolder}/.clang-format"
+	"C_Cpp.clang_format_path": "${workspaceFolder}/.clang-format",
+	"editor.guides.bracketPairs": true
 }

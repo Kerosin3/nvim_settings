@@ -10,7 +10,7 @@
 		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
 	},
 	{
-		"key": "ctrl+tab",
+		"key": "shift+tab",
 		"command": "selectPrevSuggestion",
 		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
 	},
@@ -38,11 +38,6 @@
 	{
 		"key": "ctrl+shift+n",
 		"command": "editor.action.formatSelection"
-	},
-	{
-		"key": "shift+h",
-		"command": "editor.action.showHover",
-		"when": "editorTextFocus"
 	},
 	{
 		"key": "ctrl+alt",
