@@ -23,7 +23,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'https://github.com/cdelledonne/vim-cmake'
 Plug 'Yggdroot/indentLine'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'cljoly/telescope-repo.nvim'
 Plug 'nvim-lua/popup.nvim'
