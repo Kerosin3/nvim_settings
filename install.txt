@@ -6,10 +6,10 @@ mv sources.list /etc/apt/sources.list
 apt-get update
 
 # apt
-sudo apt-get install kitty zsh cmake meson flex bison fzf ripgrep nodejs tmux npm build-essential dwarves snapd gedit net-tools nmap wget curl krusader telegram-desktop git efitools libboost-all-dev kompare kmail krename mc nnn openssh-server ssh htop btop python3 python3-pip python3-pynvim cpufrequtils power-profiles-daemon netselect-apt xz-utils cpupower-gui ccache rsync libelf-dev grub-customizer rdfind firmware-linux-free vnstat  lm-sensors ncdu gdu tree
+sudo apt-get install kitty zsh cmake meson flex bison fzf ripgrep nodejs tmux npm build-essential dwarves snapd gedit net-tools nmap wget curl krusader telegram-desktop git efitools libboost-all-dev kompare kmail krename mc nnn openssh-server ssh htop btop python3 python3-pip python3-pynvim cpufrequtils power-profiles-daemon netselect-apt xz-utils cpupower-gui ccache rsync libelf-dev grub-customizer rdfind firmware-linux-free vnstat  lm-sensors ncdu gdu tree ninja-build gir1.2-gtop-2.0
 
-sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev xterm python3-subunit mesa-common-dev zstd liblz4-tool
-sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-monitor
+sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev xterm python3-subunit mesa-common-dev zstd liblz4-tool libfdt-dev libslirp-dev 
+sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-monitor gnome-shell-extensions gnome-shell-extension-manager gnome-software
 
 
 #snap
@@ -37,6 +37,31 @@ sudo apt-get update & sudo apt-get install clang-16 clangd clang-format libstdc+
 
 sudo update-alternatives --install /usr/bin/cc cc /usr/bin/clang-16 100
 sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++-16 100
+
+# after install gcc compiler
+
+#Remove the previous alternatives
+sudo update-alternatives --remove-all gcc
+sudo update-alternatives --remove-all g++
+
+#Define the compiler
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 30
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 30
+
+sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30
+sudo update-alternatives --set cc /usr/bin/gcc
+
+sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
+sudo update-alternatives --set c++ /usr/bin/g++
+
+#Confirm and update (You can use the default setting)
+sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+
+# gcc repository
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+
+https://askubuntu.com/questions/1192955/how-to-install-g-10-on-ubuntu-18-04
 
 #Plug Manager
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
