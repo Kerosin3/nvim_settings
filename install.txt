@@ -6,10 +6,15 @@ mv sources.list /etc/apt/sources.list
 apt-get update
 
 # apt
-sudo apt-get install kitty zsh cmake meson flex bison fzf ripgrep nodejs tmux npm build-essential dwarves snapd gedit net-tools nmap wget curl krusader telegram-desktop git efitools libboost-all-dev kompare kmail krename mc nnn openssh-server ssh htop btop python3 python3-pip python3-pynvim cpufrequtils power-profiles-daemon netselect-apt xz-utils cpupower-gui ccache rsync libelf-dev grub-customizer rdfind firmware-linux-free vnstat  lm-sensors ncdu gdu tree ninja-build gir1.2-gtop-2.0
+sudo apt-get install kitty zsh cmake meson flex bison fzf ripgrep nodejs tmux npm build-essential dwarves snapd gedit net-tools nmap wget curl krusader telegram-desktop git efitools libboost-all-dev kompare kmail krename mc nnn openssh-server ssh htop btop python3 python3-pip python3-pynvim cpufrequtils power-profiles-daemon netselect-apt xz-utils cpupower-gui ccache rsync libelf-dev grub-customizer rdfind firmware-linux-free vnstat  lm-sensors ncdu gdu tree ninja-build gir1.2-gtop-2.0 help2man libtool libtool-bin libtool-doc ttf-mscorefonts-installer software-properties-common libfuse2 lshw
 
 sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev xterm python3-subunit mesa-common-dev zstd liblz4-tool libfdt-dev libslirp-dev 
 sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-monitor gnome-shell-extensions gnome-shell-extension-manager gnome-software
+
+#qemu
+https://christitus.com/vm-setup-in-linux/
+sudo apt install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
+
 
 
 #snap
@@ -154,3 +159,11 @@ https://extensions.gnome.org/extension/744/hide-activities-button/
 https://forum.proxmox.com/threads/iwlwifi-module-crash-on-load-for-m-2-intel-ax210-ngw-wifi-card.111150/
 https://github.com/spxak1/weywot/blob/main/ax210.md#install-new-firmware
 https://github.com/vrolife/modern_laptop
+
+
+apt-get purge firmware-amd-graphics libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all
+apt-get purge gir1.2-gtk-3.0
+apt-get autoremove
+apt-get install firmware-amd-graphics libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all
+apt-get install gnome gdm3 mutter gnome-core 
+apt-get install libgtk-3-dev libgtk-3-0 gir1.2-gtk-3.0 // ?????
