@@ -1,6 +1,6 @@
 {
 	"telemetry.enableTelemetry": false,
-	"workbench.colorTheme": "Tokyo Night",
+	"workbench.colorTheme": "Dark Low Contrast Cold",
 	"workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
 	"workbench.colorCustomizations": {
 		"editor.selectionBackground": "#135564",
@@ -162,5 +162,7 @@
 	"editor.guides.bracketPairs": true,
 	"C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
 	"C_Cpp.inlayHints.parameterNames.enabled": true,
-        "C_Cpp.inlayHints.referenceOperator.enabled": true
+		"C_Cpp.inlayHints.referenceOperator.enabled": true,
+		"window.titleBarStyle": "custom",
+		"window.zoomLevel": -1
 }

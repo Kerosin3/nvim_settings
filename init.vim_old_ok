@@ -4,16 +4,16 @@
 nnoremap <SPACE> <Nop>
 let mapleader = " "
 call plug#begin('~/.config/nvim/plugged')
-"Plug 'tyru/open-browser.vim' " opens url in browser
+Plug 'tyru/open-browser.vim' " opens url in browser
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
-"Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
+Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 "Plug 'https://github.com/vim-airline/vim-airline'
 "Plug 'https://github.com/ycm-core/YouCompleteMe'
-"Plug 'https://github.com/tpope/vim-fugitive' "
-"Plug 'rakr/vim-one'
-"Plug 'sickill/vim-monokai'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'rakr/vim-one'
+Plug 'sickill/vim-monokai'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'frazrepo/vim-rainbow'
 "Plug 'vim-airline/vim-airline'
@@ -28,17 +28,17 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'cljoly/telescope-repo.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
-"Plug 'rust-lang/rust.vim'
-"Plug 'pearofducks/ansible-vim'
-"Plug 'nanotech/jellybeans.vim'
-"Plug 'HenryNewcomer/vim-theme-papaya'
-"Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+Plug 'rust-lang/rust.vim'
+Plug 'pearofducks/ansible-vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'HenryNewcomer/vim-theme-papaya'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'https://github.com/mg979/docgen.vim' DOGE instead
 Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'petertriho/nvim-scrollbar'
-"Plug 'tpope/vim-fugitive' " GIT!!!!!!!!!!!!!!!!
+Plug 'tpope/vim-fugitive'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
