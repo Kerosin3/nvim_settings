@@ -6,6 +6,10 @@ telescope.load_extension('media_files')
 
 local actions = require "telescope.actions"
 local telescope_actions = require("telescope.actions.set")
+local builtin = require("telescope.builtin")
+
+local fb_actions = require 'telescope'.extensions.file_browser.actions;
+
 local fixfolds = {
     hidden = true,
     attach_mappings = function(_)
@@ -62,6 +66,8 @@ telescope.setup {
       },
 
       n = {
+	["n"] = fb_actions.create,
+	['h'] = fb_actions.goto_parent_dir,
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
