@@ -107,6 +107,7 @@ colorscheme tokyonight-moon
 set termguicolors
 "colorscheme embark
 syntax enable
+set listchars=tab:⇤–⇥,space:·,trail:·,precedes:⇠,extends:⇢,nbsp:×,eol:↴
 filetype plugin indent on
 "colorscheme papaya
 set clipboard=unnamedplus
