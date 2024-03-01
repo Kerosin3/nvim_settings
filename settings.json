@@ -162,7 +162,32 @@
 	"editor.guides.bracketPairs": true,
 	"C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
 	"C_Cpp.inlayHints.parameterNames.enabled": true,
-		"C_Cpp.inlayHints.referenceOperator.enabled": true,
-		"window.titleBarStyle": "custom",
-		"window.zoomLevel": -1
+	"C_Cpp.inlayHints.referenceOperator.enabled": true,
+	"window.titleBarStyle": "custom",
+	"window.zoomLevel": -1,
+	"editor.detectIndentation": false,
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"renderWhitespace":true,
+	"files.eol": "\n",
+	"code-eol.newlineCharacter": "↴",
+    "    code-eol.returnCharacter" : "⇲",
+    "    code-eol.crlfCharacter"   : "¤¬",
+        // "editor.rulers": [80,120],
+	//"workbench.colorCustomizations": {
+    	//	"editorRuler.foreground": "#ff4081"
+	//}
+	"highlight.regexes": {
+	   "(\\s*)(.{80})(.*)": {        // skip leading whitespace, skip next 80 characters
+      "decorations": [
+        {},               // do nothing to first 2 capture groups
+        {},
+        {
+          "borderWidth": "0 0 2px 0",
+          "borderColor": "yellow",
+          "borderStyle": "solid"
+        },
+      ]
+    }
+  }
 }
