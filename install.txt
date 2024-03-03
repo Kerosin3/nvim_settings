@@ -148,6 +148,9 @@ deb http://ftp.ru.debian.org/debian bookworm-updates main
 deb-src http://ftp.ru.debian.org/debian bookworm-updates main
 
 ---------------------------------------------------------------------
+#install nvidia driver
+apt update && apt install nvidia-driver firmware-misc-nonfree
+---------------------------------------------------------------------
 
 #gnome extension
 
