@@ -1,7 +1,7 @@
 {
 	"telemetry.enableTelemetry": false,
-	"workbench.colorTheme": "Dark Low Contrast Cold",
-	"workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+	"workbench.colorTheme": "GitHub Dark Dimmed",
+	"workbench.iconTheme": "material-icon-theme",
 	"workbench.colorCustomizations": {
 		"editor.selectionBackground": "#135564",
 		"editor.selectionHighlightBackground": "#135564",
@@ -17,11 +17,11 @@
 	        "editorBracketPairGuide.background5": "#DAD8D8",
 	        "editorBracketPairGuide.background6": "#18EECE",
 	        "editorBracketPairGuide.activeBackground1": "#F367C9",
-      "editorBracketPairGuide.activeBackground2": "#FD70B2",
-      "editorBracketPairGuide.activeBackground3": "#41A7FA",
-      "editorBracketPairGuide.activeBackground4": "#B084EB",
-      "editorBracketPairGuide.activeBackground5": "#DBDADA",
-      "editorBracketPairGuide.activeBackground6": "#16FAD8",
+	        "editorBracketPairGuide.activeBackground2": "#FD70B2",
+                "editorBracketPairGuide.activeBackground3": "#41A7FA",
+		"editorBracketPairGuide.activeBackground4": "#B084EB",
+		"editorBracketPairGuide.activeBackground5": "#DBDADA",
+		"editorBracketPairGuide.activeBackground6": "#16FAD8",
 		"editorBracketHighlight.foreground1": "#3700ff",
 		"editorBracketHighlight.foreground2": "#66ff00",
 		"editorBracketHighlight.unexpectedBracket.foreground": "#aa0000",
@@ -30,14 +30,14 @@
 
 	},
 	"indentRainbow.indicatorStyle": "light",
-	"indentRainbow.lightIndicatorStyleLineWidth": 2,
-	"editor.guides.indentation": false,
+	"indentRainbow.lightIndicatorStyleLineWidth": 0,
 	"indentRainbow.colors": [
-		"rgba(255,255,64,0.2)",
-		"rgba(127,255,127, 0.2)",
-		"rgba(255,127,255, 0.2)",
-		"rgba(79,236,236, 0.2)"
+		"rgba(255,255,64,0.5)",
+		"rgba(127,255,127, 0.5)",
+		"rgba(255,127,255, 0.5)",
+		"rgba(79,236,236, 0.5)"
 	],
+	"editor.guides.bracketPairs": "active",
 	"editor.renderWhitespace": "all",
 	"editor.fontFamily": "Mononoki Nerd Font",
 	"editor.fontLigatures": true,
@@ -159,13 +159,15 @@
 	"errorLens.gutterIconsEnabled": true,
 	"clang-format.language.cpp.style": "file",
 	"C_Cpp.clang_format_path": "${workspaceFolder}/.clang-format",
-	"editor.guides.bracketPairs": true,
 	"C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
 	"C_Cpp.inlayHints.parameterNames.enabled": true,
 	"C_Cpp.inlayHints.referenceOperator.enabled": true,
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": -1,
-	"editor.detectIndentation": false,
+	"workbench.editor.highlightModifiedTabs": true,
+	"editor.detectIndentation": true,
+	"editor.indentGuideStyle": "dashed",
+	"editor.indentGuideWidth": 10,
 	"editor.tabSize": 4,
 	"editor.insertSpaces": false,
 	"renderWhitespace":true,
@@ -173,21 +175,19 @@
 	"code-eol.newlineCharacter": "↴",
     "    code-eol.returnCharacter" : "⇲",
     "    code-eol.crlfCharacter"   : "¤¬",
-        // "editor.rulers": [80,120],
-	//"workbench.colorCustomizations": {
-    	//	"editorRuler.foreground": "#ff4081"
-	//}
 	"highlight.regexes": {
-	   "(\\s*)(.{80})(.*)": {        // skip leading whitespace, skip next 80 characters
+	   "(\\s*)(.{80})(.*)": {        
       "decorations": [
-        {},               // do nothing to first 2 capture groups
+        {},               
         {},
         {
           "borderWidth": "0 0 2px 0",
           "borderColor": "yellow",
           "borderStyle": "solid"
-        },
+        }
       ]
     }
-  }
+},
+       "mesonbuild.downloadLanguageServer": true,
+       "editor.guides.indentation": true
 }
