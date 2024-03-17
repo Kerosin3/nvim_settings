@@ -29,6 +29,7 @@
 		"terminalCursor.foreground": "#ffff00"
 
 	},
+	"indentRainbow.ignoreErrorLanguages": ["*"],
 	"indentRainbow.indicatorStyle": "light",
 	"indentRainbow.lightIndicatorStyleLineWidth": 0,
 	"indentRainbow.colors": [
