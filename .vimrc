@@ -25,3 +25,8 @@ set cursorline
 autocmd InsertEnter * highlight  CursorLine ctermbg=None ctermfg=Red
 " Revert Color to default when leaving Insert Mode
 autocmd InsertLeave * highlight  CursorLine ctermbg=None ctermfg=None
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+map <leader>s <cmd>exe "%s/\\v\<" .. expand("<cword>") .. ">/" .. input("Replace \"" .. expand("<cword>") .. "\" by? ") .. "/g"<cr>
+inoremap jj <ESC>
+map <C-s> :write<CR>
