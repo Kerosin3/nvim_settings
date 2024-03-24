@@ -444,3 +444,5 @@ command! -range SvReportHierarchy call CocRequest("svlangserver", 'workspace/exe
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+" replace
+map <leader>s <cmd>exe "%s/\\v\<" .. expand("<cword>") .. ">/" .. input("Replace \"" .. expand("<cword>") .. "\" by? ") .. "/g"<cr>
