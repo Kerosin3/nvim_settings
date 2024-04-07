@@ -97,8 +97,10 @@
 	},
 	{
 		"key": "ctrl+shift+r",
-		"command": "cmake.projectStatus.launchTarget"
+		"command": "workbench.action.tasks.runTask",
+		"args": "run"
 	},
+
 	{
 		"key": "shift+alt+h",
 		"command": "editor.action.showDefinitionPreviewHover"
