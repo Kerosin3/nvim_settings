@@ -292,3 +292,4 @@ done
 [[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
 zinit cdreplay -q
 alias dmesg='sudo dmesg --decode --nopager --color --ctime'
+alias r='ranger'
