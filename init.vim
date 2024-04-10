@@ -53,6 +53,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'dstein64/vim-startuptime'
+Plug 'wfxr/minimap.vim'
 call plug#end()
 "KEYBINDINGS
 "[] jumps between code blocks
@@ -446,3 +447,6 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 " replace
 map <leader>s <cmd>exe "%s/\\v\<" .. expand("<cword>") .. ">/" .. input("Replace \"" .. expand("<cword>") .. "\" by? ") .. "/g"<cr>
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 1
