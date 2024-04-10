@@ -53,6 +53,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'dstein64/vim-startuptime'
+"wget https://github.com/wfxr/code-minimap/releases/download/v0.6.7/code-minimap_0.6.7_amd64.deb & sudo dpkg -i code-minimap_0.6.7_amd64.deb
 Plug 'wfxr/minimap.vim'
 call plug#end()
 "KEYBINDINGS
