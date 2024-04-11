@@ -293,3 +293,7 @@ done
 zinit cdreplay -q
 alias dmesg='sudo dmesg --decode --nopager --color --ctime'
 alias r='ranger'
+alias git_log='git log --pretty=format:"%h%x09%an%x09%ad%x09%s"'
+alias git_graph='git log --all --decorate --oneline --graph'
+alias git_um='git diff --name-only --diff-filter=U --relative'
+alias git_full='git log --graph --decorate $(git rev-list -g --all)'
