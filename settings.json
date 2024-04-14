@@ -190,5 +190,6 @@
     }
 },
        "mesonbuild.downloadLanguageServer": true,
-       "editor.guides.indentation": true
+	"editor.guides.indentation": true,
+	"cmake.showOptionsMovedNotification": false
 }
