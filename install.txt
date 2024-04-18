@@ -139,7 +139,7 @@ deb http://ftp.ru.debian.org/debian  sid main non-free contrib
 
 #deb http://ftp.ru.debian.org/debian bookworm main
 deb-src http://ftp.ru.debian.org/debian bookworm main
-deb http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware
+deb https://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware
 
 deb http://deb.debian.org/debian-security/ bookworm-security main
 deb-src http://deb.debian.org/debian-security/ bookworm-security main
