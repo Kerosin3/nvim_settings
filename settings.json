@@ -29,6 +29,17 @@
 		"terminalCursor.foreground": "#ffff00"
 
 	},
+	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.colorCustomizations": {
+        "[GitHub Dark Dimmed]": {
+            "tab.activeBackground": "#aa000030",
+            "tab.inactiveBackground":"#18EECE50",
+	    "tab.activeModifiedBorder": "#ffff00",
+	    "tab.inactiveModifiedBorder": "#ffff00",
+	    "tab.unfocusedActiveModifiedBorder":"#FB78B5",
+	    "tab.unfocusedInactiveModifiedBorder":"#41A7Fa"
+        }
+	},
 	"indentRainbow.ignoreErrorLanguages": ["*"],
 	"indentRainbow.indicatorStyle": "light",
 	"indentRainbow.lightIndicatorStyleLineWidth": 0,
@@ -165,7 +176,6 @@
 	"C_Cpp.inlayHints.referenceOperator.enabled": true,
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": -1,
-	"workbench.editor.highlightModifiedTabs": true,
 	"editor.detectIndentation": true,
 	"editor.indentGuideStyle": "dashed",
 	"editor.indentGuideWidth": 10,

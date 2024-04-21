@@ -118,6 +118,18 @@
 	{
   		"key": "ctrl+w",
 		  "command": "workbench.action.closeActiveEditor"
+	},
+	{
+  		"key": "ctrl+e",
+		  "command": "findWordAtCursor.next"
+	},
+	{
+  		"key": "alt+e",
+		  "command": "findWordAtCursor.previous"
+	},
+	{ 
+		"key": "ctrl+shift+s", 
+		  "command": "workbench.action.files.saveAll" 
 	}
 
 
