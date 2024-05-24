@@ -120,7 +120,7 @@
 		  "command": "workbench.action.closeActiveEditor"
 	},
 	{
-  		"key": "ctrl+e",
+  		"key": "ctrl+r",
 		  "command": "findWordAtCursor.next"
 	},
 	{

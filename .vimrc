@@ -28,5 +28,16 @@ autocmd InsertLeave * highlight  CursorLine ctermbg=None ctermfg=None
 nnoremap <SPACE> <Nop>
 let mapleader = " "
 map <leader>s <cmd>exe "%s/\\v\<" .. expand("<cword>") .. ">/" .. input("Replace \"" .. expand("<cword>") .. "\" by? ") .. "/g"<cr>
+" exit insertmode
 inoremap jj <ESC>
+" save
 map <C-s> :write<CR>
+" search word and jupm to next
+nnoremap <c-r> * :let @/ = "\\<<C-r><C-w>\\>"<cr>:set hlsearch<cr>
+" press ' to delete to blackhole
+noremap ' "_
+" map x to delete to blackhole
+nnoremap x "_x
+xnoremap x "_x
+nnoremap X "_X
+xnoremap X "_X

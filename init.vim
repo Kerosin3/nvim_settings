@@ -452,4 +452,13 @@ let g:minimap_width = 10
 let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
 
-nnoremap <c-e> * :let @/ = "\\<<C-r><C-w>\\>"<cr>:set hlsearch<cr>
+nnoremap <c-r> * :let @/ = "\\<<C-r><C-w>\\>"<cr>:set hlsearch<cr>
+" press ' to delete to blackhole
+noremap ' "_
+nnoremap 'd "_dd
+xnoremap 'd "_dd
+" map x to delete to blackhole
+nnoremap x "_x
+xnoremap x "_x
+nnoremap X "_X
+xnoremap X "_X
