@@ -102,3 +102,5 @@ nnoremap x "_x
 xnoremap x "_x
 nnoremap X "_X
 xnoremap X "_X
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$
