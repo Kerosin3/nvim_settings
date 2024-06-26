@@ -109,7 +109,10 @@ colorscheme tokyonight-moon
 set termguicolors
 "colorscheme embark
 syntax enable
-set listchars=tab:⇤–⇥,space:·,trail:·,precedes:⇠,extends:⇢,nbsp:×,eol:↴
+
+set list
+set listchars=tab:⇤–⇥,space:·,trail:~,precedes:⇠,extends:⇢,nbsp:␣,eol:↴
+
 filetype plugin indent on
 "colorscheme papaya
 set clipboard=unnamedplus
@@ -433,15 +436,13 @@ set foldexpr=nvim_treesitter#foldexpr()
 noremap <silent> <M-k> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 noremap <silent> <M-j> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
 set splitright
-" C-w + v - verical split
+" C-w + v - verical split 
 " C-w + q - close current split
 " C-w + w - switch between tabs
 " C-v open in vsplit   TELESCAPE
 " C+\ - open bottom terminal, \\ - close
 " C+ ] - open floating terminal
 set hlsearch
-highlight RedundantSpaces ctermbg=red guibg=red
-match RedundantSpaces /\s\+$/
 command! SvBuildIndex call CocRequest("svlangserver", 'workspace/executeCommand', {'command': 'systemverilog.build_index'})
 command! -range SvReportHierarchy call CocRequest("svlangserver", 'workspace/executeCommand', {'command': 'systemverilog.report_hierarchy', 'arguments': [input('Module/interface: ', <range> == 0 ? "" : expand("<cword>"))]})
 
@@ -463,3 +464,11 @@ nnoremap x "_x
 xnoremap x "_x
 nnoremap X "_X
 xnoremap X "_X
+
+"highlight trailing whitespace
+augroup TrailingSpace
+  au!
+  au VimEnter,WinEnter * highlight link TrailingSpaces Error
+  au VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+  au FileType defx highlight clear TrailingSpaces
+augroup END

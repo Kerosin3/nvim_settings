@@ -13,8 +13,9 @@ export PATH="$PATH:/home/$USER/.config/nvim/to_path"
 export PATH="/home/$USER/.local/bin:${PATH}" 
 # Path to your oh-my-zsh installation.
 #export ZSH="/home/ker0/.oh-my-zsh"
-export XILINXD_LICENSE_FILE="2100@DSPSRV"
 export VISUAL=nvim
+export EDITOR=vim.basic
+alias vi=$EDITOR
 #export QT_QPA_PLATFORM="xcb"
 #export QT_QPA_PLATFORMTHEME=qt5ct
 #export QT_XFT=true
@@ -189,7 +190,6 @@ export NNN_COLORS='2143'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias virtualbox="env QT_QPA_PLATFORM=xcb virtualbox"
-alias vi=nvim
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org/"
 
 export cblockchain_conf=/home/ker0/test/prj/sources/logging/zlog.conf
@@ -297,3 +297,6 @@ alias git_log='git log --pretty=format:"%h%x09%an%x09%ad%x09%s"'
 alias git_graph='git log --all --decorate --oneline --graph'
 alias git_um='git diff --name-only --diff-filter=U --relative'
 alias git_full='git log --graph --decorate $(git rev-list -g --all)'
+zstyle ':omz:alpha:lib:git' async-prompt no
+
+alias vim='/usr/bin/vim.basic'
