@@ -128,13 +128,16 @@
 		  "command": "findWordAtCursor.previous"
 	},
 	{ 
-		"key": "ctrl+shift+s", 
-		  "command": "workbench.action.files.saveAll" 
+		"key": "ctrl+shift+s",
+		  "command": "workbench.action.files.saveAll"
 	},
 	{ 
-		"key": "ctrl+shift+z", 
+		"key": "ctrl+shift+z",
 		  "command": "clangd.restart"
+	},
+	{
+		"key": "ctrl+alt+e",
+		"command": "editor.action.changeAll",
+		"when": "editorTextFocus && !editorReadonly"
 	}
-
-
 ]
