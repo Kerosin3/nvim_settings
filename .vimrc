@@ -13,7 +13,10 @@ Plug 'bagrat/vim-buffet' " tabs
 Plug 'voldikss/vim-floaterm'
 Plug 'https://github.com/RRethy/vim-illuminate.git'
 Plug 'https://github.com/jszakmeister/vim-togglecursor'
+Plug 'https://github.com/machakann/vim-highlightedyank'
 call plug#end()
+
+let g:highlightedyank_highlight_duration = 300
 
 "nnoremap <SPACE> <Nop>
 let mapleader =" "
@@ -38,8 +41,8 @@ set hlsearch
 set number
 set list
 set listchars=tab:⇤–⇥,space:·,trail:·,precedes:⇠,extends:⇢,nbsp:×,eol:↴
-set mouse=a
-set clipboard=autoselect,autoselectplus
+set mouse=v
+"set clipboard=autoselect,autoselectplus
 set clipboard=unnamedplus
 set statusline+=%F
 set laststatus=2
@@ -127,3 +130,5 @@ au InsertLeave * set nocul
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 highlight LineNr ctermfg=NONE ctermbg=NONE ctermfg=grey
 set cursorline
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)

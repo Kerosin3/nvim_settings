@@ -326,6 +326,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
+
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
@@ -446,8 +447,6 @@ set hlsearch
 command! SvBuildIndex call CocRequest("svlangserver", 'workspace/executeCommand', {'command': 'systemverilog.build_index'})
 command! -range SvReportHierarchy call CocRequest("svlangserver", 'workspace/executeCommand', {'command': 'systemverilog.report_hierarchy', 'arguments': [input('Module/interface: ', <range> == 0 ? "" : expand("<cword>"))]})
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
 " replace
 map <leader>s <cmd>exe "%s/\\v\<" .. expand("<cword>") .. ">/" .. input("Replace \"" .. expand("<cword>") .. "\" by? ") .. "/g"<cr>
 let g:minimap_width = 10
@@ -472,3 +471,23 @@ augroup TrailingSpace
   au VimEnter,WinEnter * match TrailingSpaces /\s\+$/
   au FileType defx highlight clear TrailingSpaces
 augroup END
+
+"show 80 char line
+nnoremap <Leader>h :call<SID>EightyLine()<cr>
+fun! s:EightyLine()
+ if !exists('w:eightyline')
+  let w:eightyline = 1
+  :set colorcolumn=80  " highlight three columns after 'textwidth'
+  :highlight ColorColumn ctermbg=16 guibg=#000000
+ else
+  unl w:eightyline
+  :set colorcolumn=80  " highlight three columns after 'textwidth'
+  :highlight ColorColumn NONE
+ endif
+endfunction
+
+" highligh 81 character
+au BufWinEnter * if &textwidth > 8
+\ | let w:m1=matchadd('MatchParen', printf('\%%<%dv.\%%>%dv', &textwidth+4, &textwidth+3), -1)
+\ | endif
+
