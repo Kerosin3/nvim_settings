@@ -109,7 +109,8 @@ colorscheme tokyonight-moon
 set termguicolors
 "colorscheme embark
 syntax enable
-
+set shiftwidth=4
+set tabstop=4
 set list
 set listchars=tab:⇤–⇥,space:·,trail:~,precedes:⇠,extends:⇢,nbsp:␣,eol:↴
 
