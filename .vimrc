@@ -132,3 +132,6 @@ highlight LineNr ctermfg=NONE ctermbg=NONE ctermfg=grey
 set cursorline
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
+"mode lin up and down
+noremap <c-s-up> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
+noremap <c-s-down> ddp

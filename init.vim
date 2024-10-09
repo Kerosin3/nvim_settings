@@ -54,7 +54,7 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'dstein64/vim-startuptime'
 "wget https://github.com/wfxr/code-minimap/releases/download/v0.6.7/code-minimap_0.6.7_amd64.deb & sudo dpkg -i code-minimap_0.6.7_amd64.deb
-Plug 'wfxr/minimap.vim'
+"Plug 'wfxr/minimap.vim'
 call plug#end()
 "KEYBINDINGS
 "[] jumps between code blocks
@@ -492,3 +492,7 @@ au BufWinEnter * if &textwidth > 8
 \ | let w:m1=matchadd('MatchParen', printf('\%%<%dv.\%%>%dv', &textwidth+4, &textwidth+3), -1)
 \ | endif
 
+
+" move line up and down
+noremap <c-s-up> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
+noremap <c-s-down> ddp
