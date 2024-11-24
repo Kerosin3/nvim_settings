@@ -498,6 +498,7 @@ noremap <c-s-down> ddp
 " close tree after file open
 " nerdtree -> o open dir, u -> close dir
 let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 let NERDTreeMapOpenInTab='<TAB>'

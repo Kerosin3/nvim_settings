@@ -17,7 +17,7 @@ Plug 'https://github.com/machakann/vim-highlightedyank'
 call plug#end()
 
 let g:highlightedyank_highlight_duration = 300
-
+let NERDTreeShowHidden=1
 "nnoremap <SPACE> <Nop>
 let mapleader =" "
 syntax on
