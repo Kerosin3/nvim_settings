@@ -100,6 +100,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "colorscheme tokyonight-storm
 "colorscheme tokyonight-day
 set laststatus=2
+set smartcase
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 if !has('gui_running')
   set t_Co=256
@@ -491,8 +492,11 @@ endfunction
 au BufWinEnter * if &textwidth > 8
 \ | let w:m1=matchadd('MatchParen', printf('\%%<%dv.\%%>%dv', &textwidth+4, &textwidth+3), -1)
 \ | endif
-
-
 " move line up and down
 noremap <c-s-up> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
 noremap <c-s-down> ddp
+" close tree after file open
+" nerdtree -> o open dir, u -> close dir
+let NERDTreeQuitOnOpen=1
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
