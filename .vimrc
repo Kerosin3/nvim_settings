@@ -135,3 +135,14 @@ call matchadd('ColorColumn', '\%81v', 100)
 "mode lin up and down
 noremap <c-s-up> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
 noremap <c-s-down> ddp
+let NERDTreeQuitOnOpen=1
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+let NERDTreeMapOpenInTab='<TAB>'
+let NERDTreeMapOpenInTabSilent='<ENTER>'
+let g:NERDTreeMapActivateNode = 'v'
+let g:NERDTreeMapPreview = 'o'
+

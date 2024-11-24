@@ -500,3 +500,8 @@ noremap <c-s-down> ddp
 let NERDTreeQuitOnOpen=1
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
+let NERDTreeMapOpenInTab='<TAB>'
+let NERDTreeMapOpenInTabSilent='<ENTER>'
+let g:NERDTreeMapActivateNode = 'v'
+let g:NERDTreeMapPreview = 'o'
+
