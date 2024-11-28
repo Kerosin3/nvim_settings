@@ -69,7 +69,7 @@
 	"diagnostic.warningSign": "",
 	"diagnostic.infoSign": "⚡",
 	"diagnostic.hintSign": "",
-	"diagnostic.enableMessage": "always",
+	"diagnostic.enableMessage": "jump",
 	"diagnostic.locationlistUpdate": true,
 	"explorer.diagnostic.displayMax": 40,
 	"rust-analyzer.enable": true,

@@ -505,4 +505,5 @@ let NERDTreeMapOpenInTab='<TAB>'
 let NERDTreeMapOpenInTabSilent='<ENTER>'
 let g:NERDTreeMapActivateNode = 'v'
 let g:NERDTreeMapPreview = 'o'
-
+" call show diagnostics
+nnoremap <silent> <leader>b :call CocAction('diagnosticInfo') <CR>
