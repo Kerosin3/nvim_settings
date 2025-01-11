@@ -11,11 +11,13 @@
 #export PATH="/usr/lib/ccache:${PATH}" 
 export PATH="$PATH:/home/$USER/.config/nvim/to_path" 
 export PATH="/home/$USER/.local/bin:${PATH}" 
+export PATH="$PATH:/usr/local/cuda-12.6/bin"
+export PATH="$PATH:/usr/sbin"
 # Path to your oh-my-zsh installation.
 #export ZSH="/home/ker0/.oh-my-zsh"
 export VISUAL=nvim
-export EDITOR=vim.basic
-alias vi=$EDITOR
+alias vi='/usr/bin/vim.gtk3'
+alias vim='/usr/bin/vim.gtk3'
 #export QT_QPA_PLATFORM="xcb"
 #export QT_QPA_PLATFORMTHEME=qt5ct
 #export QT_XFT=true
@@ -292,6 +294,7 @@ done
 [[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
 zinit cdreplay -q
 alias dmesg='sudo dmesg --decode --nopager --color --ctime'
+alias dfh='df -h --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660'
 alias r='ranger'
 alias git_log='git log --pretty=format:"%h%x09%an%x09%ad%x09%s"'
 alias git_graph='git log --all --decorate --oneline --graph'
@@ -299,4 +302,3 @@ alias git_um='git diff --name-only --diff-filter=U --relative'
 alias git_full='git log --graph --decorate $(git rev-list -g --all)'
 zstyle ':omz:alpha:lib:git' async-prompt no
 
-alias vim='/usr/bin/vim.basic'

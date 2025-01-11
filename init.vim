@@ -274,7 +274,6 @@ augroup mygroup
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -507,3 +506,4 @@ let g:NERDTreeMapActivateNode = 'v'
 let g:NERDTreeMapPreview = 'o'
 " call show diagnostics
 nnoremap <silent> <leader>b :call CocAction('diagnosticInfo') <CR>
+"nnoremap <silent> ,y <C-r>=CocActionAsync('showSignatureHelp')<CR>
