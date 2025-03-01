@@ -6,7 +6,7 @@ let mapleader = " "
 call plug#begin('~/.config/nvim/plugged')
 "Plug 'tyru/open-browser.vim' " opens url in browser
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+"Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 "Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 "Plug 'https://github.com/vim-airline/vim-airline'
@@ -16,8 +16,8 @@ Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 "Plug 'sickill/vim-monokai'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'frazrepo/vim-rainbow'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 "Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'https://github.com/cdelledonne/vim-cmake'
@@ -53,6 +53,9 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'dstein64/vim-startuptime'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'romgrk/barbar.nvim'
 "wget https://github.com/wfxr/code-minimap/releases/download/v0.6.7/code-minimap_0.6.7_amd64.deb & sudo dpkg -i code-minimap_0.6.7_amd64.deb
 "Plug 'wfxr/minimap.vim'
 call plug#end()
@@ -69,14 +72,17 @@ autocmd ColorScheme *
 au FileType c,cpp,objc,objcpp,rs call rainbow#load()
  let g:rainbow_guifgs = ['aquamarine', 'chocolate1', 'plum1', 'darkseagreen1']
 let g:rainbow_active = 1
+
+:lua require("barbar-config")
 :lua require("scrollbar-config")
 :lua require("tokio-night-config")
-":lua require("nvim-tree-config")
+:lua require("nvim-tree-config")
 :lua require("indent-blankline-config")
 :lua require("telescope-config")
 :lua require("nvim-surround")
 :lua require("toggleterm_config")
 :lua require("treesitter")
+:lua require("lualine-config")
 " mapping to open a specific window.
 " For example: 2<C-t> will open terminal 2
 nnoremap <C-\> :ToggleTerm direction=horizontal size=17 start_in_insert=true close_on_exit=true<CR>
@@ -162,10 +168,10 @@ set completeopt-=preview
 " for save using Ctrl + s on command mode
 " Need run this command: echo 'stty -ixon' >> ~/.bashrc && exec $SHELL
 map <C-s> :write<CR>
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+" nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 " <C-Enter>     Insert single / [count] newline.
@@ -379,18 +385,20 @@ nnoremap <Space><Tab> cgn
 "nmap <silent> <C-g> <Plug>(ale_next_wrap)
 "let g:ale_sign_error = '●'
 "let g:ale_sign_warning = '.'
-let g:lightline = {
-      \ 'colorscheme': 'tokyonight',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly','absolutepath', 'filename', 'modified' ] ]
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
+"lightline
+let g:lightline={ 'enable': {'statusline': 1, 'tabline': 0} }
+"let g:lightline = {
+"      \ 'colorscheme': 'tokyonight',
+"      \ 'active': {
+"      \   'left': [ [ 'mode', 'paste' ],
+"      \             [ 'gitbranch', 'readonly','absolutepath', 'filename', 'modified' ] ]
+"      \ },
+"      \ 'separator': { 'left': '', 'right': '' },
+"      \ 'subseparator': { 'left': '', 'right': '' },
+"      \ 'component_function': {
+"      \   'gitbranch': 'FugitiveHead'
+"      \ },
+"      \ }
 highlight Cursor guifg=white guibg=#ffcc00
 highlight iCursor guifg=white guibg=#ff6600
 set guicursor=n-v-c:block-Cursor
@@ -496,14 +504,15 @@ noremap <c-s-up> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
 noremap <c-s-down> ddp
 " close tree after file open
 " nerdtree -> o open dir, u -> close dir
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
+"let NERDTreeQuitOnOpen=1
+"let NERDTreeShowHidden=1
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
-let NERDTreeMapOpenInTab='<TAB>'
-let NERDTreeMapOpenInTabSilent='<ENTER>'
-let g:NERDTreeMapActivateNode = 'v'
-let g:NERDTreeMapPreview = 'o'
+"let NERDTreeMapOpenInTab='<TAB>'
+"let NERDTreeMapOpenInTabSilent='<ENTER>'
+"let g:NERDTreeMapActivateNode = 'v'
+"let g:NERDTreeMapPreview = 'o'
 " call show diagnostics
 nnoremap <silent> <leader>b :call CocAction('diagnosticInfo') <CR>
 "nnoremap <silent> ,y <C-r>=CocActionAsync('showSignatureHelp')<CR>
+

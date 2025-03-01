@@ -1,38 +1,26 @@
+-- examples for your init.lua
+
 -- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 0
+vim.g.loaded_netrwPlugin = 0
 vim.cmd('nnoremap <space>w :NvimTreeToggle<CR>')
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
 
-local function my_on_attach(bufnr)
-  local api = require "nvim-tree.api"
-
-  local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-
-  -- default mappings
-  api.config.mappings.default_on_attach(bufnr)
-
-  -- custom mappings
-  vim.keymap.set('n', '<->', api.tree.change_root_to_parent,        opts('Up'))
-  vim.keymap.set("n", "<C-y>", ":NvimTreeFocus<CR>")
-  --vim.keymap.set("n", "<C-f>", ":NvimTreeFindFile<CR>")
-  vim.keymap.set("n", "<C-c>", ":NvimTreeClose<CR>")
-end
-
-
-
+-- OR setup with some options
 require("nvim-tree").setup({
   disable_netrw = true,
   hijack_netrw = true,
-  sort_by = "extension",
-  on_attach = my_on_attach,
+  sort_by = "case_sensitive",
   view = {
     adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
     },
+  },
  git = {
         enable = true,
         ignore = true,
@@ -46,7 +34,7 @@ require("nvim-tree").setup({
         highlight_git = false,
         full_name = false,
         highlight_opened_files = "none",
-        highlight_modified = "all",
+        highlight_modified = "none",
         root_folder_label = ":~:s?$?/..?",
         indent_width = 2,
         indent_markers = {
@@ -106,3 +94,4 @@ require("nvim-tree").setup({
     dotfiles = false,
   },
 })
+

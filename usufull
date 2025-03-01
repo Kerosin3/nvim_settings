@@ -3,3 +3,8 @@ https://github.com/akshettrj/nvim-dotfiles
 https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
 
 https://github.com/LunarVim/Neovim-from-scratch/blob/master/lua/user/telescope.lua
+
+// disable updates ubuntu
+sudo apt remove unattended-upgrades -y
+
+sudo journalctl --rotate --vacuum-size=500M
