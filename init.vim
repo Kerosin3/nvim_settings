@@ -6,7 +6,7 @@ let mapleader = " "
 call plug#begin('~/.config/nvim/plugged')
 "Plug 'tyru/open-browser.vim' " opens url in browser
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-"Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 "Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 "Plug 'https://github.com/vim-airline/vim-airline'
@@ -172,8 +172,12 @@ map <C-s> :write<CR>
 " nnoremap <C-n> :NERDTree<CR>
 " nnoremap <C-t> :NERDTreeToggle<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+"nnoremap <C-Left> :tabprevious<CR>
+"nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-Left> :bnext<CR>
+nnoremap <C-Right> :bprev<CR>
+"nnoremap <|> ":vsplit<CR>"
+"nnoremap <-> ":split<CR>"
 " <C-Enter>     Insert single / [count] newline.
 "nnoremap <C-CR> i<CR><Esc>
 
@@ -515,4 +519,6 @@ map  <C-h> :tabp<CR>
 " call show diagnostics
 nnoremap <silent> <leader>b :call CocAction('diagnosticInfo') <CR>
 "nnoremap <silent> ,y <C-r>=CocActionAsync('showSignatureHelp')<CR>
+" close buffer
+nnoremap <silent><leader>q :<C-U>bprevious <bar> bdelete #<CR>
 

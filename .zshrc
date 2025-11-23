@@ -18,6 +18,7 @@ export PATH="$PATH:/usr/sbin"
 export VISUAL=nvim
 alias vi='/usr/bin/vim.gtk3'
 alias vim='/usr/bin/vim.gtk3'
+set -o vi
 #export QT_QPA_PLATFORM="xcb"
 #export QT_QPA_PLATFORMTHEME=qt5ct
 #export QT_XFT=true

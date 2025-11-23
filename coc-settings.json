@@ -42,7 +42,7 @@
 	"coc.preferences.enableMessageDialog": true,
 	"coc.preferences.formatOnSave": false,
 	"coc.preferences.formatOnType": false,
-	"inlayHint.enable": true,
+	"inlayHint.enable": false,
 	"diagnostic.virtualTextLines": 10,
 	"diagnostic.separateRelatedInformationAsDiagnostics": true,
 	"coc.preferences.willSaveHandlerTimeout": 1000,
