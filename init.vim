@@ -39,7 +39,7 @@ Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'petertriho/nvim-scrollbar'
 "Plug 'tpope/vim-fugitive' " GIT!!!!!!!!!!!!!!!!
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'master','do': ':TSUpdate'}
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'kylechui/nvim-surround'
