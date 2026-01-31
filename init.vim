@@ -6,7 +6,7 @@ let mapleader = " "
 call plug#begin('~/.config/nvim/plugged')
 "Plug 'tyru/open-browser.vim' " opens url in browser
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+"Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 "Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 "Plug 'https://github.com/vim-airline/vim-airline'
@@ -510,8 +510,9 @@ noremap <c-s-down> ddp
 " nerdtree -> o open dir, u -> close dir
 "let NERDTreeQuitOnOpen=1
 "let NERDTreeShowHidden=1
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
+" swith to next buffer
+map  <C-l> :bnext<CR>
+map  <C-h> :bprevious<CR>
 "let NERDTreeMapOpenInTab='<TAB>'
 "let NERDTreeMapOpenInTabSilent='<ENTER>'
 "let g:NERDTreeMapActivateNode = 'v'
@@ -519,6 +520,10 @@ map  <C-h> :tabp<CR>
 " call show diagnostics
 nnoremap <silent> <leader>b :call CocAction('diagnosticInfo') <CR>
 "nnoremap <silent> ,y <C-r>=CocActionAsync('showSignatureHelp')<CR>
+" open nvim tree
+nnoremap <silent><C-t> :NvimTreeToggle <CR>
 " close buffer
-nnoremap <silent><leader>q :<C-U>bprevious <bar> bdelete #<CR>
+nnoremap <leader>q :bd <CR>
 
+" open list of buffers
+nnoremap <Leader>b :ls<CR>:b<Space>

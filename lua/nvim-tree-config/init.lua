@@ -1,7 +1,7 @@
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.cmd('nnoremap <space>w :NvimTreeToggle<CR>')
+-- vim.cmd('nnoremap <space>w :NvimTreeToggle<CR>')
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
@@ -15,12 +15,15 @@ local function my_on_attach(bufnr)
 
   -- default mappings
   api.config.mappings.default_on_attach(bufnr)
+  
 
   -- custom mappings
+  -- <C-t> open ion new tab
   vim.keymap.set('n', '<->', api.tree.change_root_to_parent,        opts('Up'))
-  vim.keymap.set("n", "<C-y>", ":NvimTreeFocus<CR>")
-  --vim.keymap.set("n", "<C-f>", ":NvimTreeFindFile<CR>")
   vim.keymap.set("n", "<C-c>", ":NvimTreeClose<CR>")
+  vim.keymap.set('n', '<C-t>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })   -- Открыть/скрыть
+  vim.keymap.set('n', '<C-w>', ':NvimTreeFocus<CR>', { noremap = true, silent = true })    -- Фокус на дерево
+  vim.keymap.set('n', '<C-f>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })    -- Фокус на file
 end
 
 
