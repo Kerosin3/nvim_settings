@@ -56,6 +56,8 @@ Plug 'dstein64/vim-startuptime'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'romgrk/barbar.nvim'
+Plug 'wasabeef/bufferin.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
 "wget https://github.com/wfxr/code-minimap/releases/download/v0.6.7/code-minimap_0.6.7_amd64.deb & sudo dpkg -i code-minimap_0.6.7_amd64.deb
 "Plug 'wfxr/minimap.vim'
 call plug#end()
@@ -83,6 +85,7 @@ let g:rainbow_active = 1
 :lua require("toggleterm_config")
 :lua require("treesitter")
 :lua require("lualine-config")
+:lua require("bufferin-config")
 " mapping to open a specific window.
 " For example: 2<C-t> will open terminal 2
 nnoremap <C-\> :ToggleTerm direction=horizontal size=17 start_in_insert=true close_on_exit=true<CR>
@@ -510,9 +513,13 @@ noremap <c-s-down> ddp
 " nerdtree -> o open dir, u -> close dir
 "let NERDTreeQuitOnOpen=1
 "let NERDTreeShowHidden=1
-" swith to next buffer
-map  <C-l> :bnext<CR>
-map  <C-h> :bprevious<CR>
+" swith to next buffer VIM keybindings
+" map  <C-l> :bnext<CR>
+" map  <C-h> :bprevious<CR>
+" barbar setup
+nnoremap <silent>    <C-h> <Cmd>BufferPrevious<CR>
+nnoremap <silent>    <C-l> <Cmd>BufferNext<CR>
+nnoremap <silent>    <C-a> <Cmd>BufferOrderByWindowNumber<CR>
 "let NERDTreeMapOpenInTab='<TAB>'
 "let NERDTreeMapOpenInTabSilent='<ENTER>'
 "let g:NERDTreeMapActivateNode = 'v'
@@ -524,6 +531,7 @@ nnoremap <silent> <leader>b :call CocAction('diagnosticInfo') <CR>
 nnoremap <silent><C-t> :NvimTreeToggle <CR>
 " close buffer
 nnoremap <leader>q :bd <CR>
-
+" wa - write all changed buffers
+" xa - write all changed buffers and exit
 " open list of buffers
-nnoremap <Leader>b :ls<CR>:b<Space>
+nnoremap <Leader>b :Bufferin <CR>
